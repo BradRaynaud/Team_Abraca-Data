@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Hey Kyle!</h1>
+<h2>
+  <a href=index2.html>Click here</a>
+</h2>
+<p id=potato>This is a paragraph.</p>
+
+<script>
+var parsedUrl = new URL(window.location.href);
+var api = 'http://' + parsedUrl.host + ":8000/hello_world";
+fetch(api, {
+  mode: "no-cors",
+  method: "GET",
+  Headers: 
+  {
+    "Content-Type":"application/json"
+  }
+})
+.then((response) => {
+  console.log(response);
+  return response.json();
+})
+.then((something) => {
+    document.getElementById("potato").innerHTML = something.message;
+  });
+
+</script>
+
+</body>
+</html>
