@@ -1,0 +1,36 @@
+git checkout master
+git branch --list
+git pull
+git checkout dev
+git branch --list
+
+
+git checkout -b <feature_name>
+
+
+git status
+
+# stage a file
+git add <file>
+
+# stage all files
+git add -A
+
+
+git commit -m "<commit message here>"
+
+
+# publish local feature branch to github
+git push
+
+# NOTE: *** git push will not work ***
+# suggested command will appear in your prompt
+# use that command to push feature branch to local
+
+
+# Note you can commit as many times as you want for each push
+# You can also push as many times as you want before the next step
+
+# After you are finished with the issue on the feature branch log into to github.com
+# 
+
