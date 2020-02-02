@@ -32,5 +32,12 @@ git push
 # You can also push as many times as you want before the next step
 
 # After you are finished with the issue on the feature branch log into to github.com
-# 
+# You can create a pull request to pull the changes you just made to the dev branch
+# Once the request has been made somone else will come along and approve it
 
+# OPTIONAL # Can be done at anytime to save a set of changes for a later commit or prevent merge conflicts when pull
+# saves the changes for later in a user specified stash
+git stash
+
+# pull changes from a stash
+git stash pop
