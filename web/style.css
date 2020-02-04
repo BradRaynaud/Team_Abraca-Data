@@ -23,6 +23,17 @@ body {
     position: relative;
     height: 200px;
   }
+  .logo_image {
+    background-image: url("images/MPLogo.jpg");
+    background-color: #cccccc;
+    background-size: 100%;
+    background-position: center;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    height: 100px;
+    width: 100px;
+  }
   button {
     position: absolute;
     left: 42%;
