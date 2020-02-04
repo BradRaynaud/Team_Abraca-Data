@@ -1,0 +1,2 @@
+db.createCollection("recipes");
+db.recipes.insertOne({title:"Egg Recipe", difficulty:"egg", time:"egg", ingredients:{1:"egg",2:"eight whole egg"}, steps:{1:"put eight egg on plate",2:"look at all those egg",3:"congratuleggtion"}})

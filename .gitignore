@@ -1,0 +1,7 @@
+*.wt
+*.lock
+*.bson
+*.turtle
+WiredTiger
+diagnostic.data
+journal

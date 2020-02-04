@@ -8,8 +8,16 @@ services:
       - ./web:/usr/local/apache2/htdocs
   database:
     image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      - MONGO_INITDB_DATABASE=foodthings
     ports:
       - 8081:8081
+      - 27017:27017
+    volumes:
+      - ./database/data:/data/db
+      - ./database/db-init:/docker-entrypoint-initdb.d
   backend:
     build: ./backend
     ports:
