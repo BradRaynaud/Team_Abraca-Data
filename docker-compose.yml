@@ -14,7 +14,7 @@ services:
       - MONGO_INITDB_DATABASE=foodthings
     ports:
       - 8081:8081
-      - 27017:27017
+      
     volumes:
       - ./database/data:/data/db
       - ./database/db-init:/docker-entrypoint-initdb.d
