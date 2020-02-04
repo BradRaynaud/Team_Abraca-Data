@@ -47,7 +47,27 @@ app.get("/mongoroute", function(req,res){
     });
 })
 
+app.get("/mongoinsert", function(req, res) {
+    MongoClient.connect(url, function(err, client) {
+        console.log("Connected successfully to server");
+
+        const db = client.db(dbName);
+        console.log("DB found");
+
+        var myobj = {title: "Grilled Chicken", difficulty: "chicken", time: "chicken", ingredients: {1: "chicken", 2: "olive oil", 3: "seasoning"}, steps: {1: "Place chicken on pan", 2: "Simmer chicken on medium heat", 3: "Put chicken on plate when done cooking"}};
+
+        db.collection("recipes").insertOne(myobj, function(err, res) {
+            if (err) throw err;
+            console.log("1 recipe inserted");
+        });
+
+        client.close();
+        console.log("Connection closed");
+    });
+})
+
 app.listen(8000, "0.0.0.0");
+
 
 
 
