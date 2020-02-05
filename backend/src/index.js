@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 
 // Connection URL
-const url = 'mongodb://admin:pass@database:27017';
+const url = 'mongodb://root:example@mongo:27017';
  
 // Database Name
 const dbName = 'foodthings';
