@@ -6,10 +6,24 @@ services:
       - 80:80
     volumes:
       - ./web:/usr/local/apache2/htdocs
-  database:
+  mongo:
     image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+      - MONGO_INITDB_DATABASE=foodthings
+    volumes:
+      - ./database/db-init:/docker-entrypoint-initdb.d
+  mongo-express:
+    image: mongo-express
+    restart: always
     ports:
       - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    depends_on:
+      - mongo
   backend:
     build: ./backend
     ports:
