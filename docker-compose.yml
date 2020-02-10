@@ -1,13 +1,11 @@
 version: '3'
 services:
-  mysql:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-    volumes:
-      - ./sql:/docker-entrypoint-initdb.d/
+  web:
+    image: httpd:alpine
     ports:
-      - 3306:3306
+      - 80:80
+    volumes:
+      - ./web:/usr/local/apache2/htdocs
   mongo:
     image: mongo
     environment:
@@ -18,9 +16,9 @@ services:
       - ./database/db-init:/docker-entrypoint-initdb.d
   mongo-express:
     image: mongo-express
+    restart: always
     ports:
       - 8081:8081
-    restart: always
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
@@ -28,17 +26,7 @@ services:
       - mongo
   backend:
     build: ./backend
+    ports:
+      - 8000:8000
     volumes:
       - ./backend/src:/app/src
-  frontend:
-    build: ./frontend
-    volumes:
-      - ./frontend/pages:/app/pages
-  nginx:
-    image: nginx:alpine
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    ports:
-      - 80:80
-
-    
