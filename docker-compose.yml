@@ -1,11 +1,5 @@
 version: '3'
 services:
-  web:
-    image: httpd:alpine
-    ports:
-      - 80:80
-    volumes:
-      - ./web:/usr/local/apache2/htdocs
   mongo:
     image: mongo
     environment:
@@ -30,3 +24,10 @@ services:
       - 8000:8000
     volumes:
       - ./backend/src:/app/src
+  frontend:
+    build: ./frontend
+    ports:
+      - 80:3000
+    volumes:
+      - ./frontend/pages:/app/pages
+    
