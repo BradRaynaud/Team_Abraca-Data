@@ -33,7 +33,7 @@ services:
   frontend:
     build: ./frontend
     volumes:
-      - ./frontend/pages:/app/pages
+      - ./frontend/src:/app/mealplanner/src
   nginx:
     image: nginx:alpine
     volumes:
