@@ -2,8 +2,16 @@ FROM node:alpine
 
 WORKDIR /app
 
+RUN npm install -g create-react-app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+RUN create-react-app mealplanner
+
+WORKDIR /app/mealplanner
+
 COPY package.json ./
 
 RUN npm install
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "start" ]
