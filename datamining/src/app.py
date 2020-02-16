@@ -3,9 +3,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/datamining')
-def hello():
-    print("Hello darkness my old friend")
+@app.route('/')
+
+@app.route('/HelloWorld',methods=['GET', 'POST'])
+def datamining():
     return "Hello World"
 
 

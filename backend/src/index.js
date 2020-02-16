@@ -1,6 +1,6 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-
+const unirest = require('unirest')
 
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
@@ -64,6 +64,18 @@ app.get("/mongoinsert", function(req, res) {
         client.close();
         console.log("Connection closed");
     });
+})
+
+app.get('/datastuff', function (req, res) {
+    console.log("Call recived")
+    unirest
+    .post('http://datamining:5000/HelloWorld')
+    .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+    .send({ "parameter": 23, "foo": "bar" })
+    .then((response) => {
+        console.log(response.body)
+        res.status(200).json({"message": response.body});
+  })
 })
 
 app.listen(8000, "0.0.0.0");
