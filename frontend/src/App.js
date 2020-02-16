@@ -9,6 +9,8 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 
 import Editer from './images/RecipeEdit.jpg';
+import Chef from './images/Chef2.jpeg';
+import Fridge from './images/Fridge2.jpg';
 
 import './App.css';
 
@@ -33,6 +35,20 @@ const App = () => (
     <div className="banner">
       <h1 className="header">Project Meal Planner</h1>
     </div>
+    <CardDeck>
+      <Card>
+       <Card.Img variant="top" src={Editer} />
+       <Card.Title>Edit Requirements</Card.Title>
+      </Card>
+      <Card>
+       <Card.Img variant="top" src={Chef} />
+       <Card.Title>Make Meal</Card.Title>
+      </Card>
+      <Card>
+       <Card.Img variant="top" src={Fridge} />
+       <Card.Title>Saved Meals</Card.Title>
+      </Card>
+    </CardDeck>
   </Container>
 );
 
