@@ -14,22 +14,6 @@ import Fridge from './images/Fridge2.jpg';
 
 import './App.css';
 
-const ExampleToast = ({ children }) => {
-  const [show, toggleShow] = useState(true);
-
-  return (
-    <>
-      {!show && <Button onClick={() => toggleShow(true)}>Show Toast</Button>}
-      <Toast show={show} onClose={() => toggleShow(false)}>
-        <Toast.Header>
-          <strong className="mr-auto">React-Bootstrap</strong>
-        </Toast.Header>
-        <Toast.Body>{children}</Toast.Body>
-      </Toast>
-    </>
-  );
-};
-
 const App = () => (
   <Container className="p-3">
     <div className="banner">
@@ -39,14 +23,17 @@ const App = () => (
       <Card>
        <Card.Img variant="top" src={Editer} />
        <Card.Title>Edit Requirements</Card.Title>
+       <Button variant="primary">Go</Button>
       </Card>
       <Card>
        <Card.Img variant="top" src={Chef} />
        <Card.Title>Make Meal</Card.Title>
+       <Button variant="primary">Go</Button>
       </Card>
       <Card>
        <Card.Img variant="top" src={Fridge} />
        <Card.Title>Saved Meals</Card.Title>
+       <Button variant="primary">Go</Button>
       </Card>
     </CardDeck>
   </Container>
