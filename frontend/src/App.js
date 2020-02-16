@@ -4,6 +4,11 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
+
+import Editer from './images/RecipeEdit.jpg';
 
 import './App.css';
 
@@ -25,15 +30,9 @@ const ExampleToast = ({ children }) => {
 
 const App = () => (
   <Container className="p-3">
-    <Jumbotron>
-      <h1 className="header">Welcome To React-Bootstrap</h1>
-      <ExampleToast className="toast">
-        We now have Toasts
-        <span role="img" aria-label="tada">
-          🎉
-        </span>
-      </ExampleToast>
-    </Jumbotron>
+    <div className="banner">
+      <h1 className="header">Project Meal Planner</h1>
+    </div>
   </Container>
 );
 
