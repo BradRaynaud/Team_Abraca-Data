@@ -40,5 +40,11 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - 80:80
-
+  datamining:
+      build: ./datamining
+      ports:
+        - 5000:5000
+      volumes:
+        - ./datamining/src:/datamining/code
+      
     
