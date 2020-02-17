@@ -1,6 +1,7 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-const unirest = require('unirest')
+const unirest = require('unirest');
+const bcrypt = require('bcrypt');
 
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
@@ -79,7 +80,37 @@ app.get('/datastuff', function (req, res) {
 })
 
 app.get('/signup', function (req, res) {
-    res.status(200).json({"message": "test"})
+    const saltRounds = 12; // Number of Salt rounds
+
+    // Place holder for actually recieving a plaintext password from frontend
+    const myPlaintextPassword = 'password123';
+    const someOtherPlaintextPasword = 'otherpassword123'
+
+    bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash){
+        // Insert user information to DB here
+        res.status(200).json({"message": hash})
+    })
+})
+
+app.get('/login', function (req,res) {
+    const saltRounds = 12; // Number of Salt rounds
+    
+    // Retrieve LOGIN info from DB (UUID, HASH)
+    // SQL CONNECTION STUFF GOES HERE
+
+    // Place holder for actually recieving a plaintext password from frontend
+    // FORMAT OUT OF THE REQUEST the UUID AND PASSWORD
+    //
+    const myPlaintextPassword = 'password123';
+    const someOtherPlaintextPasword = 'otherpassword123'
+    
+    // Placeholder for retrieving hash from DB
+    var hash = "$2b$12$LnoC8yEBpZmxiU66k/y7FexzOUy0iy3xCR8IZXdsxawrLmHtHz5uK"
+    
+    bcrypt.compare(someOtherPlaintextPasword, hash).then(function(result){
+        res.status(200).json({"message":result})
+    })
+
 })
 
 app.listen(8000, "0.0.0.0");
