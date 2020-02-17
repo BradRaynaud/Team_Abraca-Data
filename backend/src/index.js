@@ -78,6 +78,10 @@ app.get('/datastuff', function (req, res) {
   })
 })
 
+app.get('/signup', function (req, res) {
+    res.status(200).json({"message": "test"})
+})
+
 app.listen(8000, "0.0.0.0");
 
 

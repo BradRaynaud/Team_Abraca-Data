@@ -11,6 +11,9 @@
     "dependencies": {
         "express": "4.17.1",
         "mongodb": "3.5.2",
-        "unirest": "0.6.0"
+        "unirest": "0.6.0",
+        "node-gyp":"6.1.0",
+        "bcrypt":"3.0.8",
+        "uuid": "3.4.0"
     }
 }
