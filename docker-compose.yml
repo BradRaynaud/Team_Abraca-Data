@@ -46,5 +46,22 @@ services:
         - 5000:5000
       volumes:
         - ./datamining/src:/datamining/code
-      
-    
+  selenium-hub:
+    image: selenium/hub
+    ports:
+      - 4444:4444
+  selenium-chrome:
+    image: selenium/node-chrome
+    links: 
+      - selenium-hub:hub
+    depends_on:
+      - selenium-hub
+    restart: on-failure
+  selenium-firefox:
+    image: selenium/node-firefox
+    links: 
+      - selenium-hub:hub
+    depends_on:
+      - selenium-hub
+    restart: on-failure
+     
