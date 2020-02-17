@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "scripts": 
     {
-        "startnodemon": "nodemon ./src/index.js"
+        "startnodemon": "nodemon ./src/index.js",
+        "test": "jest --verbose ./src"
     },
     "devDependencies": {
         "nodemon": "2.0.2"
@@ -11,6 +12,7 @@
     "dependencies": {
         "express": "4.17.1",
         "mongodb": "3.5.2",
-        "unirest": "0.6.0"
+        "unirest": "0.6.0",
+        "jest":"25.1.0"
     }
 }
