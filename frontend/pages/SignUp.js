@@ -20,8 +20,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Project Groceries
+      <Link color="inherit" href="https:SignIn">
+        Project Meal Planner
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -113,7 +113,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I am ready to go on an adventure with Project Groceries."
+                label="I am ready to go on an adventure with Project Meal Planner."
               />
             </Grid>
           </Grid>
