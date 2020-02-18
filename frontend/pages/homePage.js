@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   appBar: {
-    backgroundColor: 'lawngreen',
+    backgroundColor: 'darkgrey',
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbar: {
