@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   appBar: {
+    backgroundColor: 'lawngreen',
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbar: {
@@ -86,7 +87,7 @@ const tiers = [
 ];
 const footers = [
   {
-    title: 'Company',
+    title: 'About Us',
     description: ['Team', 'Contact us', '', ''],
   },
   {
