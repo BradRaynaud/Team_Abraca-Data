@@ -99,17 +99,32 @@ export default function SignIn() {
             Sign In
           </Button>
           <Grid container>
+
             <Grid item xs>
               <Link href="/Forget" variant="body2">
                 Forgot password?
-              </Link>
+              </Link> 
             </Grid>
+
+
             <Grid item>
               <Link href="SignUp" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
+
+            {'\n'}
+
+            {'\n'}
+
+            <Grid item>
+              <Link position="absolute" bottom='0'  href="AboutUs" variant="body2">
+                {"Want to learn more about us? "}
+              </Link>
+            </Grid>
+
           </Grid>
+
         </form>
       </div>
       <Box mt={8}>

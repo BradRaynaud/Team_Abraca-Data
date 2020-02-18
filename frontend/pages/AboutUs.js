@@ -86,7 +86,7 @@ export default function AboutUs() {
       <div className={classes.paper}>
       <CssBaseline />
       <Container component="main" className={classes.main} maxWidth="sm">
-        <Typography variant="h3" component="h4" gutterBottom>
+        <Typography variant="h3" component="h2" gutterBottom>
           About Us
         </Typography>
         <Typography variant="h6" component="h2" gutterBottom>
@@ -128,3 +128,4 @@ export default function AboutUs() {
   </Grid>
 );
 }
+//
