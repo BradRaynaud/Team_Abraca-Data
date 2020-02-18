@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+//import {Link as RouterLink} from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,12 +14,14 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Project Groceries
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -120,12 +123,13 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            href = "SignIn"
           >
             Sign Up
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/SignIn" variant="body2">
                 Already with us? Sign in
               </Link>
             </Grid>
