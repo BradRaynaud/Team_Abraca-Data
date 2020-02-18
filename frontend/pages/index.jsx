@@ -1,5 +1,6 @@
 import Dashboard from "./Dashboard.js";
-import SignIn from "./SignIn"; 
+import SignIn from "./SignIn";
+import SignUp from "./SignUp"; 
 
 var module = require("./Dashboard.js");
 
@@ -8,4 +9,4 @@ function HomePage() {
   }
   
   //export default Dashboard
-  export default SignIn
+  export default SignUp
