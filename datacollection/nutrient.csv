@@ -134,29 +134,6 @@ id,name,unit_name
 1253,Cholesterol,MG
 1257,"Fatty acids, total trans",G
 1258,"Fatty acids, total saturated",G
-1259,4:0,G
-1260,6:0,G
-1261,8:0,G
-1262,10:0,G
-1263,12:0,G
-1264,14:0,G
-1265,16:0,G
-1266,18:0,G
-1267,20:0,G
-1268,18:1,G
-1269,18:2,G
-1270,18:3,G
-1271,20:4,G
-1272,22:6 n-3 (DHA),G
-1273,22:0,G
-1274,14:1,G
-1275,16:1,G
-1276,18:4,G
-1277,20:1,G
-1278,20:5 n-3 (EPA),G
-1279,22:1,G
-1280,22:5 n-3 (DPA),G
-1281,14:1 t,G
 1283,Phytosterols,MG
 1285,Stigmasterol,MG
 1286,Campesterol,MG
@@ -168,66 +145,12 @@ id,name,unit_name
 1294,Beta-sitostanol,MG
 1296,Delta-5-avenasterol,MG
 1298,"Phytosterols, other",MG
-1299,15:0,G
-1300,17:0,G
-1301,24:0,G
-1303,16:1 t,G
-1304,18:1 t,G
-1305,22:1 t,G
-1306,18:2 t not further defined,G
-1307,18:2 i,G
-1310,"18:2 t,t",G
-1311,18:2 CLAs,G
-1312,24:1 c,G
-1313,"20:2 n-6 c,c",G
-1314,16:1 c,G
-1315,18:1 c,G
-1316,"18:2 n-6 c,c",G
-1317,22:1 c,G
-1321,"18:3 n-6 c,c,c",G
-1323,17:1,G
-1325,20:3,G
 1329,"Fatty acids, total trans-monoenoic",G
 1330,"Fatty acids, total trans-dienoic",G
 1331,"Fatty acids, total trans-polyenoic",G
-1332,13:0,G
-1333,15:1,G
-1334,22:2,G
-1335,11:0,G
 1368,Epigallocatechin-3-gallate,MG
 1403,Inulin,G
-1404,"18:3 n-3 c,c,c (ALA)",G
-1405,20:3 n-3,G
-1406,20:3 n-6,G
-1408,20:4 n-6,G
-1409,18:3i,G
-1410,21:5,G
-1411,22:4,G
-1412,18:1-11 t (18:1t n-7),G
-1414,20:3 n-9,G
 2000,"Sugars, total including NLEA",G
-2003,5:0,G
-2004,7:0,G
-2005,9:0,G
-2006,21:0,G
-2007,23:0,G
-2008,12:1,G
-2009,14:1 c,G
-2010,17:1 c,G
-2012,20:1 c,G
-2013,20:1 t,G
-2014,22:1 n-9,G
-2015,22:1 n-11,G
-2016,18:2 c,G
-2018,18:3 c,G
-2019,18:3 t,G
-2020,20:3 c,G
-2021,22:3,G
-2022,20:4 c,G
-2023,20:5 c,G
-2024,22:5 c,G
-2025,22:6 c,G
-2026,20:2 c,G
 2028,trans-beta-Carotene,UG
 2029,trans-Lycopene,UG
 2032,"Cryptoxanthin, alpha",UG
