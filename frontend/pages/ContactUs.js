@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   appBar: {
-    backgroundColor: 'lawngreen',
+    backgroundColor: 'darkgray',
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbar: {

@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
@@ -18,8 +18,12 @@ import Box from '@material-ui/core/Box';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      <Link color="inherit" href="https://material-ui.com/">
-      </Link>
+      {'Copyright © '}
+      <Link color="inherit" href="/AboutUs">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
     </Typography>
   );
 }
@@ -85,23 +89,17 @@ const tiers = [
     buttonVariant: 'outlined',
   },
 ];
+
 const footers = [
   {
     title: 'About Us',
-    description: [['Team','/AboutUs'], '', '', ''],
+    description: ['/AboutUs'],
   },
   {
     title: 'Contact Us',
-    description: [['Github','/ContactUs']],
+    description: ['/ContactUs'],
   },
-  {
-    title: '',
-    description: [''],
-  },
-  {
-    title: '',
-    description: [''],
-  },
+
 ];
 
 export default function Pricing() {
@@ -114,12 +112,12 @@ export default function Pricing() {
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
           </Typography>
-          <Button href="/SignUp" color="primary" variant="outlined" className={classes.link}>
-            Sign Up
-          </Button>
-          <Button href="SignIn" color="primary" variant="outlined" className={classes.link}>
-            Login
-          </Button>
+          <Link href="/SignUp" color="primary" variant="outlined" className={classes.link}>
+            <Button color="primary" variant="outlined">Sign Up</Button>
+          </Link>
+          <Link href="/SignIn" color="primary" variant="outlined" className={classes.link}>
+            <Button color="primary" variant="outlined">Sign In</Button>
+          </Link>
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
@@ -178,8 +176,8 @@ export default function Pricing() {
               <ul>
                 {footer.description.map(item => (
                   <li key={item}>
-                    <Link href={item[1]} variant="subtitle1" color="textSecondary">
-                      {item[0]}
+                    <Link href={item} variant="subtitle1" color="textSecondary">
+                      {item}
                     </Link>
                   </li>
                 ))}
