@@ -177,7 +177,7 @@ export default function Pricing() {
               <ul>
                 {footer.description.map(item => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
+                    <Link href="/ContactUs" variant="subtitle1" color="textSecondary">
                       {item}
                     </Link>
                   </li>
