@@ -1,6 +1,8 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-const unirest = require('unirest')
+const unirest = require('unirest');
+const bcrypt = require('bcrypt');
+var mysql = require('mysql');
 
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
@@ -76,6 +78,62 @@ app.get('/datastuff', function (req, res) {
         console.log(response.body)
         res.status(200).json({"message": response.body});
   })
+})
+
+app.get('/signup', function (req, res) {
+    const saltRounds = 12; // Number of Salt rounds
+
+    // Place holder for actually recieving a plaintext password from frontend
+    const myPlaintextPassword = 'password123';
+    const someOtherPlaintextPasword = 'otherpassword123'
+
+    bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash){
+        // Insert user information to DB here
+        // CODE NOT YET FULLY FUNCTIONAL, FLESH OUT FULLY NEXT SPRINT
+        /*
+        var config = {
+        host     : 'localhost',
+        port     : "3306",
+        username : 'root',
+        password : 'example',
+        database : 'users'};
+
+        var connection = mysql.createConnection(config);
+        
+        connection.connect();
+        
+        connection.query('SELECT * FROM USERS', function (error, results, fields) {
+        if (error) throw error;
+        console.log(results);
+        });
+        */
+        //connection.end();
+        res.status(200).json({"username": "username", "passwordhash": hash})
+
+
+        // ****************************
+    })
+})
+
+app.get('/login', function (req,res) {
+    const saltRounds = 12; // Number of Salt rounds
+    
+    // Retrieve LOGIN info from DB (UUID, HASH)
+    // SQL CONNECTION STUFF GOES HERE
+
+    // Place holder for actually recieving a plaintext password from frontend
+    // FORMAT OUT OF THE REQUEST the UUID AND PASSWORD
+    //
+    const myPlaintextPassword = 'password123';
+    const someOtherPlaintextPasword = 'otherpassword123'
+    
+    // Placeholder for retrieving hash from DB
+    var hash = "$2b$12$LnoC8yEBpZmxiU66k/y7FexzOUy0iy3xCR8IZXdsxawrLmHtHz5uK"
+    
+    bcrypt.compare(myPlaintextPassword, hash).then(function(result){
+        res.status(200).json({"message":result})
+    })
+
 })
 
 app.listen(8000, "0.0.0.0");

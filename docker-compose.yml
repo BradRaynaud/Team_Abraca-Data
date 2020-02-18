@@ -41,10 +41,13 @@ services:
     ports:
       - 80:80
   datamining:
-      build: ./datamining
-      ports:
-        - 5000:5000
-      volumes:
-        - ./datamining/src:/datamining/code
-      
-    
+    build: ./datamining
+    ports:
+      - 5000:5000
+    volumes:
+      - ./datamining/src:/datamining/code
+  jest:
+    build: ./backend
+    volumes:
+      - ./backend/src:/app/src
+    command: npm test
