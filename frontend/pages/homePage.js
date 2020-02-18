@@ -88,11 +88,11 @@ const tiers = [
 const footers = [
   {
     title: 'About Us',
-    description: ['Team', 'Contact us', '', ''],
+    description: [['Team','/AboutUs'], '', '', ''],
   },
   {
-    title: '',
-    description: [''],
+    title: 'Contact Us',
+    description: [['Github','/ContactUs']],
   },
   {
     title: '',
@@ -114,10 +114,10 @@ export default function Pricing() {
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
           </Typography>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
+          <Button href="/SignUp" color="primary" variant="outlined" className={classes.link}>
             Sign Up
           </Button>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
+          <Button href="SignIn" color="primary" variant="outlined" className={classes.link}>
             Login
           </Button>
         </Toolbar>
@@ -169,22 +169,24 @@ export default function Pricing() {
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
+          
           {footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
+              <Typography variant="h5" color="textPrimary" gutterBottom>
                 {footer.title}
               </Typography>
               <ul>
                 {footer.description.map(item => (
                   <li key={item}>
-                    <Link href="/ContactUs" variant="subtitle1" color="textSecondary">
-                      {item}
+                    <Link href={item[1]} variant="subtitle1" color="textSecondary">
+                      {item[0]}
                     </Link>
                   </li>
                 ))}
               </ul>
             </Grid>
           ))}
+
         </Grid>
         <Box mt={5}>
           <Copyright />
