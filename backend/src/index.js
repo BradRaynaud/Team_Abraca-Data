@@ -2,6 +2,7 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const unirest = require('unirest');
 const bcrypt = require('bcrypt');
+var mysql = require('mysql');
 
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
@@ -88,7 +89,29 @@ app.get('/signup', function (req, res) {
 
     bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash){
         // Insert user information to DB here
-        res.status(200).json({"message": hash})
+        // CODE NOT YET FULLY FUNCTIONAL, FLESH OUT FULLY NEXT SPRINT
+        /*
+        var config = {
+        host     : 'localhost',
+        port     : "3306",
+        username : 'root',
+        password : 'example',
+        database : 'users'};
+
+        var connection = mysql.createConnection(config);
+        
+        connection.connect();
+        
+        connection.query('SELECT * FROM USERS', function (error, results, fields) {
+        if (error) throw error;
+        console.log(results);
+        });
+        */
+        connection.end();
+        res.status(200).json({"username": "username", "passwordhash": hash})
+
+
+        // ****************************
     })
 })
 
