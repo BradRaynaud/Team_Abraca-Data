@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   appBar: {
+    backgroundColor: 'darkgrey',
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbar: {
@@ -86,8 +87,8 @@ const tiers = [
 ];
 const footers = [
   {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
+    title: 'About Us',
+    description: ['Team', 'Contact us', '', ''],
   },
   {
     title: '',
@@ -176,7 +177,7 @@ export default function Pricing() {
               <ul>
                 {footer.description.map(item => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
+                    <Link href="/ContactUs" variant="subtitle1" color="textSecondary">
                       {item}
                     </Link>
                   </li>
