@@ -1,0 +1,156 @@
+id,name,unit_name
+1002,Nitrogen,G
+1003,Protein,G
+1004,Total lipid (fat),G
+1005,"Carbohydrate, by difference",G
+1007,Ash,G
+1008,Energy,KCAL
+1009,Starch,G
+1010,Sucrose,G
+1011,Glucose (dextrose),G
+1012,Fructose,G
+1013,Lactose,G
+1014,Maltose,G
+1018,"Alcohol, ethyl",G
+1024,Specific Gravity,SP_GR
+1026,Acetic acid,MG
+1038,Lactic acid,MG
+1050,"Carbohydrate, by summation",G
+1051,Water,G
+1056,Sorbitol,G
+1057,Caffeine,MG
+1058,Theobromine,MG
+1062,Energy,kJ
+1063,"Sugars, Total NLEA",G
+1072,"Carbohydrate, other",G
+1075,Galactose,G
+1078,Xylitol,G
+1079,"Fiber, total dietary",G
+1081,Ribose,G
+1082,"Fiber, soluble",G
+1084,"Fiber, insoluble",G
+1085,Total fat (NLEA),G
+1086,Total sugar alcohols,G
+1087,"Calcium, Ca",MG
+1088,"Chlorine, Cl",MG
+1089,"Iron, Fe",MG
+1090,"Magnesium, Mg",MG
+1091,"Phosphorus, P",MG
+1092,"Potassium, K",MG
+1093,"Sodium, Na",MG
+1094,"Sulfur, S",MG
+1095,"Zinc, Zn",MG
+1096,"Chromium, Cr",UG
+1097,"Cobalt, Co",UG
+1098,"Copper, Cu",MG
+1099,"Fluoride, F",UG
+1100,"Iodine, I",UG
+1101,"Manganese, Mn",MG
+1102,"Molybdenum, Mo",UG
+1103,"Selenium, Se",UG
+1104,"Vitamin A, IU",IU
+1105,Retinol,UG
+1106,"Vitamin A, RAE",UG
+1107,"Carotene, beta",UG
+1108,"Carotene, alpha",UG
+1109,Vitamin E (alpha-tocopherol),MG
+1110,"Vitamin D (D2 + D3), International Units",IU
+1111,Vitamin D2 (ergocalciferol),UG
+1112,Vitamin D3 (cholecalciferol),UG
+1113,25-hydroxycholecalciferol,UG
+1114,Vitamin D (D2 + D3),UG
+1116,Phytoene,UG
+1117,Phytofluene,UG
+1119,Zeaxanthin,UG
+1120,"Cryptoxanthin, beta",UG
+1121,Lutein,UG
+1122,Lycopene,UG
+1123,Lutein + zeaxanthin,UG
+1124,Vitamin E (label entry primarily),IU
+1125,"Tocopherol, beta",MG
+1126,"Tocopherol, gamma",MG
+1127,"Tocopherol, delta",MG
+1128,"Tocotrienol, alpha",MG
+1129,"Tocotrienol, beta",MG
+1130,"Tocotrienol, gamma",MG
+1131,"Tocotrienol, delta",MG
+1137,"Boron, B",UG
+1146,"Nickel, Ni",UG
+1158,Vitamin E,MG_ATE
+1159,cis-beta-Carotene,UG
+1160,cis-Lycopene,UG
+1161,cis-Lutein/Zeaxanthin,UG
+1162,"Vitamin C, total ascorbic acid",MG
+1165,Thiamin,MG
+1166,Riboflavin,MG
+1167,Niacin,MG
+1170,Pantothenic acid,MG
+1175,Vitamin B-6,MG
+1176,Biotin,UG
+1177,"Folate, total",UG
+1178,Vitamin B-12,UG
+1180,"Choline, total",MG
+1181,Inositol,MG
+1183,Vitamin K (Menaquinone-4),UG
+1184,Vitamin K (Dihydrophylloquinone),UG
+1185,Vitamin K (phylloquinone),UG
+1186,Folic acid,UG
+1187,"Folate, food",UG
+1188,5-methyl tetrahydrofolate (5-MTHF),UG
+1190,"Folate, DFE",UG
+1191,10-Formyl folic acid (10HCOFA),UG
+1192,5-Formyltetrahydrofolic acid (5-HCOH4,UG
+1194,"Choline, free",MG
+1195,"Choline, from phosphocholine",MG
+1196,"Choline, from phosphotidyl choline",MG
+1197,"Choline, from glycerophosphocholine",MG
+1198,Betaine,MG
+1199,"Choline, from sphingomyelin",MG
+1210,Tryptophan,G
+1211,Threonine,G
+1212,Isoleucine,G
+1213,Leucine,G
+1214,Lysine,G
+1215,Methionine,G
+1216,Cystine,G
+1217,Phenylalanine,G
+1218,Tyrosine,G
+1219,Valine,G
+1220,Arginine,G
+1221,Histidine,G
+1222,Alanine,G
+1223,Aspartic acid,G
+1224,Glutamic acid,G
+1225,Glycine,G
+1226,Proline,G
+1227,Serine,G
+1228,Hydroxyproline,G
+1232,Cysteine,G
+1233,Glutamine,G
+1234,Taurine,G
+1235,"Sugars, added",G
+1242,"Vitamin E, added",MG
+1246,"Vitamin B-12, added",UG
+1253,Cholesterol,MG
+1257,"Fatty acids, total trans",G
+1258,"Fatty acids, total saturated",G
+1283,Phytosterols,MG
+1285,Stigmasterol,MG
+1286,Campesterol,MG
+1287,Brassicasterol,MG
+1288,Beta-sitosterol,MG
+1289,Campestanol,MG
+1292,"Fatty acids, total monounsaturated",G
+1293,"Fatty acids, total polyunsaturated",G
+1294,Beta-sitostanol,MG
+1296,Delta-5-avenasterol,MG
+1298,"Phytosterols, other",MG
+1329,"Fatty acids, total trans-monoenoic",G
+1330,"Fatty acids, total trans-dienoic",G
+1331,"Fatty acids, total trans-polyenoic",G
+1368,Epigallocatechin-3-gallate,MG
+1403,Inulin,G
+2000,"Sugars, total including NLEA",G
+2028,trans-beta-Carotene,UG
+2029,trans-Lycopene,UG
+2032,"Cryptoxanthin, alpha",UG
