@@ -3,8 +3,12 @@ The USDA food data has been narrowed down to 3 csv files that have content relev
 2: nutrient-Contains the ID, Plaintext name, and unit of measurement for every nutrient
 3: food_nutrient-Contains food ID, nutrient ID, and quantity per 100g of every recorded nutrient for every food
 
+All irrelevant columns in each csv were stripped off
+
 The goal of processing this was to be able to get all nutritional info for a food within just one row
 This was accomplished by first joining food_nutrient with nutrient to attach the nutrient name and unit of measurement to every nutrient value
 Second, this combined nutrient table was split by nutrient ID and each piece was joined to the food table based on the food ID, this added columns for every nutrient name, unit, and quantity to every food
 
 This allows a user to acess all nutrient amounts for every food while only querying for a single row
+
+Currently, there are around 230 nutrients. However, because we do not yet know the extent of our needs regarding nutrient data, these have been untouched in the current csv
