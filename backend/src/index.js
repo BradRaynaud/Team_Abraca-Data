@@ -107,7 +107,7 @@ app.get('/signup', function (req, res) {
         console.log(results);
         });
         */
-        connection.end();
+        //connection.end();
         res.status(200).json({"username": "username", "passwordhash": hash})
 
 
@@ -130,7 +130,7 @@ app.get('/login', function (req,res) {
     // Placeholder for retrieving hash from DB
     var hash = "$2b$12$LnoC8yEBpZmxiU66k/y7FexzOUy0iy3xCR8IZXdsxawrLmHtHz5uK"
     
-    bcrypt.compare(someOtherPlaintextPasword, hash).then(function(result){
+    bcrypt.compare(myPlaintextPassword, hash).then(function(result){
         res.status(200).json({"message":result})
     })
 
