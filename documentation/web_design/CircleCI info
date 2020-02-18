@@ -1,0 +1,7 @@
+CircleCI is what we will use for our CI/CD pipeline for automated testing.
+It is a cloud-based pipeline which means that we don't need a dedicated server to run.
+There is also a free plan that works within the resource constraints of our project.
+
+CircleCI has easy integration with docker through its config files.
+We will use this link to CircleCI documentation to get started on it for sprint 3:
+https://circleci.com/docs/2.0/getting-started/#section=getting-started
