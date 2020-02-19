@@ -46,8 +46,8 @@ services:
       - 5000:5000
     volumes:
       - ./datamining/src:/datamining/code
-  jest:
+  backendtest:
     build: ./backend
     volumes:
       - ./backend/src:/app/src
-    command: npm test
+    command: npm test   
