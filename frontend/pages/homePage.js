@@ -75,18 +75,21 @@ const tiers = [
     description: ['Change any required nutrition amounts or indicate any special restrictions for your meals.'],
     buttonText: 'Edit',
     buttonVariant: 'outlined',
+    link: '/AboutUs'
   },
   {
     title: 'Make Meal',
     description: ['Have the program create a meal plan for your current week and go to week-view.'],
     buttonText: 'Create',
     buttonVariant: 'contained',
+    link: '/WeekView'
   },
   {
     title: 'Saved Meals',
     description: ['If you have saved any previous meal plans, you can see them on this page.'],
     buttonText: 'Search',
     buttonVariant: 'outlined',
+    link: '/ContactUs'
   },
 ];
 
@@ -155,9 +158,11 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant} color="primary">
-                    {tier.buttonText}
-                  </Button>
+                  <Link href={tier.link}>
+                    <Button fullWidth variant={tier.buttonVariant} color="primary">
+                      {tier.buttonText}
+                    </Button>
+                  </Link>
                 </CardActions>
               </Card>
             </Grid>
