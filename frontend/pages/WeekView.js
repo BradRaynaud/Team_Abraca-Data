@@ -65,6 +65,72 @@ const useStyles = makeStyles(theme => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
 
+const tiers = [
+{
+  title:'Monday Breakfast'
+},
+{
+  title:'Monday Lunch'
+},
+{
+  title:'Monday Dinner'
+},
+{
+  title:'Tuesday Breakfast'
+},
+{
+  title:'Tuesday Lunch'
+},
+{
+  title:'Tuesday Dinner'
+},
+{
+  title:'Wednesday Breakfast'
+},
+{
+  title:'Wednesday Lunch'
+},
+{
+  title:'Wednesday Dinner'
+},
+{
+  title:'Thursday Breakfast'
+},
+{
+  title:'Thursday Lunch'
+},
+{
+  title:'Thursday Dinner'
+},
+{
+  title:'Friday Breakfast'
+},
+{
+  title:'Friday Lunch'
+},
+{
+  title:'Friday Dinner'
+},
+{
+  title:'Saturday Breakfast'
+},
+{
+  title:'Saturday Lunch'
+},
+{
+  title:'Saturday Dinner'
+},
+{
+  title:'Sunday Breakfast'
+},
+{
+  title:'Sunday Lunch'
+},
+{
+  title:'Sunday Dinner'
+},
+];
+
 export default function Album() {
   const classes = useStyles();
 
@@ -101,10 +167,10 @@ export default function Album() {
                   <Card className={classes.card}>
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Heading
+                        Meal
                       </Typography>
                       <Typography>
-                        This is a media card. You can use this section to describe the content.
+                        A meal will be described here with its entree and side dishes.
                       </Typography>
                     </CardContent>
                   </Card>
@@ -116,12 +182,6 @@ export default function Album() {
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
         <Copyright />
       </footer>
       {/* End footer */}
