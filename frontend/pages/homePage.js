@@ -36,6 +36,15 @@ const useStyles = makeStyles(theme => ({
       listStyle: 'none',
     },
   },
+  image: {
+    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/TableAlt2.jpg?raw=true)',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    marginBottom: theme.spacing(1),
+  },
   appBar: {
     backgroundColor: 'darkgrey',
     borderBottom: `1px solid ${theme.palette.divider}`,
@@ -56,7 +65,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor:
       theme.palette.type === 'dark' ? theme.palette.grey[700] : theme.palette.grey[200],
   },
-
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
@@ -124,15 +132,17 @@ export default function Pricing() {
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Project Meal Planner
-        </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Create a meal plan for the current week that will follow requirements set by you!
-          Enjoy a large variety of meals while sticking to the nutrient plan you want!
-        </Typography>
-      </Container>
+      <Grid item xs={false} className={classes.image}>
+        <Container maxWidth="sm" component="main" className={classes.heroContent}>
+          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            Project Meal Planner
+          </Typography>
+          <Typography variant="h5" align="center" color="textSecondary" component="p">
+            Create a meal plan for the current week that will follow requirements set by you!
+            Enjoy a large variety of meals while sticking to the nutrient plan you want!
+          </Typography>
+        </Container>
+      </Grid>
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
