@@ -5,12 +5,15 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
@@ -28,6 +31,14 @@ function Copyright() {
   );
 }
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#ffffff'
+    },
+  }
+});
+
 const useStyles = makeStyles(theme => ({
   '@global': {
     ul: {
@@ -35,6 +46,15 @@ const useStyles = makeStyles(theme => ({
       padding: 0,
       listStyle: 'none',
     },
+  },
+  image: {
+    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/TableAlt2.jpg?raw=true)',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    marginBottom: theme.spacing(1),
   },
   appBar: {
     backgroundColor: 'darkgrey',
@@ -56,7 +76,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor:
       theme.palette.type === 'dark' ? theme.palette.grey[700] : theme.palette.grey[200],
   },
-
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
@@ -75,21 +97,24 @@ const tiers = [
     description: ['Change any required nutrition amounts or indicate any special restrictions for your meals.'],
     buttonText: 'Edit',
     buttonVariant: 'outlined',
-    link: '/AboutUs'
+    link: '/AboutUs',
+    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipeEdit.jpg?raw=true",
   },
   {
     title: 'Make Meal',
     description: ['Have the program create a meal plan for your current week and go to week-view.'],
     buttonText: 'Create',
     buttonVariant: 'contained',
-    link: '/WeekView'
+    link: '/WeekView',
+    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Chef2.jpeg?raw=true",
   },
   {
     title: 'Saved Meals',
     description: ['If you have saved any previous meal plans, you can see them on this page.'],
     buttonText: 'Search',
     buttonVariant: 'outlined',
-    link: '/ContactUs'
+    link: '/ContactUs',
+    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Fridge1.jpg?raw=true)",
   },
 ];
 
@@ -124,15 +149,19 @@ export default function Pricing() {
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Project Meal Planner
-        </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Create a meal plan for the current week that will follow requirements set by you!
-          Enjoy a large variety of meals while sticking to the nutrient plan you want!
-        </Typography>
-      </Container>
+      <Grid item xs={false} className={classes.image}>
+        <Container maxWidth="sm" component="main" className={classes.heroContent}>
+          <ThemeProvider theme={theme}>
+            <Typography component="h1" variant="h2" align="center" color="primary" gutterBottom>
+              Project Meal Planner
+            </Typography>
+            <Typography variant="h5" align="center" color="primary" component="p">
+              Create a meal plan for the current week that will follow requirements set by you!
+              Enjoy a large variety of meals while sticking to the nutrient plan you want!
+            </Typography>
+          </ThemeProvider>
+        </Container>
+      </Grid>
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
@@ -147,6 +176,11 @@ export default function Pricing() {
                   subheaderTypographyProps={{ align: 'center' }}
                   action={tier.title === 'Pro' ? <StarIcon /> : null}
                   className={classes.cardHeader}
+                />
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={tier.image}
+                  title="Image title"
                 />
                 <CardContent>
                   <ul>
