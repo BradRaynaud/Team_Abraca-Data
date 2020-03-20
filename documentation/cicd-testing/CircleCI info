@@ -5,3 +5,5 @@ There is also a free plan that works within the resource constraints of our proj
 CircleCI has easy integration with docker through its config files.
 We will use this link to CircleCI documentation to get started on it for sprint 3:
 https://circleci.com/docs/2.0/getting-started/#section=getting-started
+
+For the time being, CircleCI integration into our current forms of testing seems to be adding a few lines of code into our .yaml file.

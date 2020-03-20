@@ -16,7 +16,7 @@ unirest
   })
 
 
-  unirest
+unirest
   .get('http://localhost/api/mongoroute')
   .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
   .then((response) => {
@@ -31,7 +31,7 @@ unirest
   })
 
 
-  unirest
+unirest
   .get('http://localhost/api/datastuff')
   .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
   .then((response) => {
@@ -46,7 +46,7 @@ unirest
   })
 
 
-  unirest
+unirest
   .get('http://localhost/api/datastuff')
   .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
   .then((response) => {
@@ -61,7 +61,7 @@ unirest
   }) 
 
 
-  unirest
+unirest
   .get('http://localhost/api/signup')
   .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
   .then((response) => {
@@ -76,7 +76,7 @@ unirest
   })
 
 
-  unirest
+unirest
   .get('http://localhost/api/login')
   .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
   .then((response) => {
