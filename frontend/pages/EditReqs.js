@@ -67,12 +67,12 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                name="maxCalorie"
+                name="calorie"
                 variant="outlined"
                 required
                 fullWidth
-                id="maxCalorie"
-                label="Max Calorie Limit"
+                id="calorie"
+                label="Optimal Calorie Amount"
                 autoFocus
               />
             </Grid>
@@ -80,15 +80,36 @@ export default function SignUp() {
               <TextField
                 variant="outlined"
                 fullWidth
-                id="minCalorie"
-                label="Minimun Calorie Limit"
-                name="minCalorie"
+                id="fat"
+                label="Optimal Fat Amount"
+                name="fat"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                id="cholesterol"
+                label="Optimal Cholesterol Amount"
+                name="cholesterol"
               />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="Vegetarian"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="Vegan"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="Keto"
               />
             </Grid>
           </Grid>
