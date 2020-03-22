@@ -7,3 +7,5 @@ We will use this link to CircleCI documentation to get started on it for sprint 
 https://circleci.com/docs/2.0/getting-started/#section=getting-started
 
 For the time being, CircleCI integration into our current forms of testing seems to be adding a few lines of code into our .yaml file.
+
+WE HAVE DECIDED TO NOT PURSUE A CICD PIPELINE FOR THE SCOPE OF THIS PROJECT
