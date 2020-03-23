@@ -69,7 +69,6 @@ export default function SignUp() {
               <TextField
                 name="calorie"
                 variant="outlined"
-                required
                 fullWidth
                 id="calorie"
                 label="Optimal Calorie Amount"
@@ -92,6 +91,33 @@ export default function SignUp() {
                 id="cholesterol"
                 label="Optimal Cholesterol Amount"
                 name="cholesterol"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                id="protein"
+                label="Optimal Protein Amount"
+                name="protein"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                id="sodium"
+                label="Optimal Sodium Amount"
+                name="sodium"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                id="carbohydrate"
+                label="Optimal Carbohydrate Amount"
+                name="carbohydrate"
               />
             </Grid>
             <Grid item xs={12}>
