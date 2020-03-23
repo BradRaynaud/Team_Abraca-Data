@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import csv
 
 #URL = 'https://www.allrecipes.com/recipe/7423/mayonnaise-cake-i/'
 print("Enter URL")
@@ -74,19 +75,19 @@ soup = BeautifulSoup(x.text, 'html.parser')
 
 ############################################################################################################
 # URL
-print(URL)
+#print(URL)
 
 ############################################################################################################
 # Title
-print(soup.find('h1').get_text())
+Title = soup.find('h1').get_text()
 
 ############################################################################################################
 # Yields
 recipe_yield = soup.find('meta', {'itemprop': 'recipeYield'})
 if recipe_yield:
-    print(get_yields(recipe_yield.get("content")))
+    Yield = get_yields(recipe_yield.get("content"))
 else:
-    print(get_yields(soup.find('div',{'class': 'recipe-adjust-servings__original-serving'}).get_text()))
+    Yield = get_yields(soup.find('div',{'class': 'recipe-adjust-servings__original-serving'}).get_text())
 
 ############################################################################################################
 # Ingredients
@@ -100,7 +101,7 @@ Ingredients_Output = [
     for ingredient in ingredients
     if ingredient.get_text(strip=True) not in ('Add all ingredients to list','','ADVERTISEMENT')]
 
-print(Ingredients_Output)
+
 
 
 ############################################################################################################
@@ -113,42 +114,31 @@ if not instructions:
 
 Instructions_Output =  '\n'.join([normalize_string(instruction.get_text())for instruction in instructions])
 
-print(Instructions_Output)
+Instructions_Output = Instructions_Output.replace("\n","")
+
 
 ############################################################################################################
 # Nutrition
 
-nutrition = soup.findAll('div',{'class': 'partial recipe-nutrition-section'})
+print("Calories?")
+cal = input()
 
-for row in nutrition:
-    output = row.findAll('div',{'class': 'section-body'})
-    
-output = str(output)
+print("Fat?")
+fat = input()
 
-output = remove_tags(output)
+print("Cholesterol?")
+chol = input()
 
+print("Sodium?")
+sodium = input()
 
-output = output.replace(" ","")
+print("Carbohydrates")
+carbs = input()
 
-output = output.split(";")
+print("Protein?")
+protein = input()
 
-output[0] = output[0][1:]
-output = output[:5]
-
-string = output[3].split(".")
-
-
-string[1] = string[1]+"."
-
-string[1] = string[1]+string[2]
-
-string = string[:2]
-
-output = output + string
-
-output.pop(3)
-
-print(output)
+output = [cal,fat,chol,protein,sodium,carbs]
 
 ############################################################################################################
 # Tags
@@ -160,9 +150,25 @@ for i in range(tagnum):
     tag = input()
     tags.append(tag)
 
+############################################################################################################
+# Tags
+print("ID Number?")
+ID = input()
 
+############################################################################################################
+# add to 
+print(ID)
+print(URL)
+print(Title)
+print(Yield)
+print(Ingredients_Output)
+print(Instructions_Output)
+print(output) # Nutrition
 print(tags)
 ############################################################################################################
-############################################################################################################
+# CSV adding
 
+with open('sample.csv', mode='a') as filename:
+    writer = csv.writer(filename, delimiter=';', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
+    writer.writerow([ID,URL,Title,Yield,Ingredients_Output,Instructions_Output,output,tags])

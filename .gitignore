@@ -6,3 +6,4 @@ WiredTiger
 diagnostic.data
 journal
 .vscode
+*.csv
