@@ -97,7 +97,7 @@ const tiers = [
     description: ['Change any required nutrition amounts or indicate any special restrictions for your meals.'],
     buttonText: 'Edit',
     buttonVariant: 'outlined',
-    link: '/AboutUs',
+    link: '/EditReqs',
     image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipeEdit.jpg?raw=true",
   },
   {
