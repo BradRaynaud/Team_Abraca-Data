@@ -1,101 +1,119 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import StarIcon from '@material-ui/icons/StarBorder';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Link from 'next/link';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      <Link color="inherit" href="https://material-ui.com/">
-      </Link>
+    <Typography variant="body2" color="textSecondary">
+      {'Copyright © '}
+      <Link color="inherit" href="SignIn">
+        Project Meal Planner
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
     </Typography>
   );
 }
 
 const useStyles = makeStyles(theme => ({
-  '@global': {
-    ul: {
-      margin: 0,
-      padding: 0,
-      listStyle: 'none',
-    },
+  root: {
+    height: '100vh',
   },
-  appBar: {
-    backgroundColor: 'darkgray',
-    borderBottom: `1px solid ${theme.palette.divider}`,
-  },
-  toolbar: {
-    flexWrap: 'wrap',
-  },
-  toolbarTitle: {
-    flexGrow: 1,
-  },
-  link: {
-    margin: theme.spacing(1, 1.5),
-  },
-  heroContent: {
-    padding: theme.spacing(8, 0, 6),
-  },
-  cardHeader: {
+  
+  image: {
+    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/web/images/MPLogo.jpg?raw=true)',
+    backgroundRepeat: 'no-repeat',
     backgroundColor:
-      theme.palette.type === 'dark' ? theme.palette.grey[700] : theme.palette.grey[200],
+      theme.palette.type === 'dark' ? theme.palette.grey[900] : theme.palette.grey[50],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
 
-  footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+  
+  main: {
     marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
+    marginBottom: theme.spacing(2),
+  },
+  footer: {
+    padding: theme.spacing(3, 2),
+    marginTop: 'auto',
+    backgroundColor:
+      theme.palette.type === 'dark' ? theme.palette.grey[800] : theme.palette.grey[200],    
   },
 }));
 
-export default function Pricing() {
+
+
+
+
+export default function AboutUs() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <Grid container component="main" className={classes.root}>
+    <CssBaseline />
+    <Grid item xs={false} sm={4} md={7} className={classes.image} />
+    <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <div className={classes.paper}>
       <CssBaseline />
-      <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-          </Typography>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
-            Sign Up
-          </Button>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
-      {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Contact Us:
+      <Container component="main" className={classes.main} maxWidth="sm">
+        <Typography variant="h3" component="h2" gutterBottom>
+          Contact Us
         </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p">
-          If you have any issues with the website, please refer to github.com/BradRaynaud/Team_Abraca-Data.
+        <Typography variant="h6" component="h2" gutterBottom>
+          {'If you have any issues with the website, please refer to: '}
         </Typography>
-        <Link href="/" variant="subtitle1" color="textSecondary">
-            Back
-        </Link>
+        <Typography variant="h6" component="h2" gutterBottom>
+          {'github.com/BradRaynaud/Team_Abraca-Data.'}
+        </Typography>
+        <Link href='/homePage'>
+            <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+            >
+                Back
+            </Button>
+          </Link>
       </Container>
-      {/* End hero unit */}
-    </React.Fragment>
-  );
+      <footer className={classes.footer}>
+        <Container maxWidth="sm">
+          <Typography variant="body2">For Your Dietary Needs.</Typography>
+          <Copyright />
+        </Container>
+      </footer>
+      </div>
+    </Grid>
+  </Grid>
+);
 }
