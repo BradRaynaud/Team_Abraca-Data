@@ -89,3 +89,46 @@ unirest
       console.log("Login Verify: Failed")
     }
   }) 
+
+  // New Tests
+  unirest
+  .get('http://localhost/api/datastuff')
+  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+  .then((response) => {
+    if (response.status == 200)
+    {
+      console.log("Data Validation: Passed")
+    }
+    else
+    {
+      console.log("Data Validation: Failed")
+    }
+  })
+
+  unirest
+  .get('http://localhost/api/datastuff')
+  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+  .then((response) => {
+    if (response.status == 200)
+    {
+      console.log("SQL Test: Passed")
+    }
+    else
+    {
+      console.log("SQL Test: Failed")
+    }
+  })
+
+  unirest
+  .get('http://localhost/api/datastuff')
+  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+  .then((response) => {
+    if (response.status == 200)
+    {
+      console.log("Mongo Populate: Failed")
+    }
+    else
+    {
+      console.log("Mongo Populate: Passed")
+    }
+  })
