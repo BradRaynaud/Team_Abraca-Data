@@ -10,16 +10,28 @@ const url = 'mongodb://root:example@mongo:27017';
 // Database Name
 const dbName = 'foodthings';
 
+var con = mysql.createConnection({
+    host:"mysql",
+    user: "root",
+    password: "example",
+    database: "users"
+});
+
+con.connect();
 
 var options = {
     user: "admin",
     pass: "pass"
-    };
+};
+
+var userinfo = {
+    user: "thisisatest",
+    password: "thisisatest"
+};
 
 // Create express app and add middleware
 const app = express();
 app.use(express.json());
-
  
 app.get('/hello_world', function (req, res) {
     res.status(200).json({"message": 'Hello World'});
@@ -82,58 +94,42 @@ app.get('/datastuff', function (req, res) {
 
 app.get('/signup', function (req, res) {
     const saltRounds = 12; // Number of Salt rounds
-
-    // Place holder for actually recieving a plaintext password from frontend
-    const myPlaintextPassword = 'password123';
-    const someOtherPlaintextPasword = 'otherpassword123'
-
-    bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash){
+    bcrypt.hash(userinfo.password, saltRounds, function(err, hash){
         // Insert user information to DB here
-        // CODE NOT YET FULLY FUNCTIONAL, FLESH OUT FULLY NEXT SPRINT
-        /*
-        var config = {
-        host     : 'localhost',
-        port     : "3306",
-        username : 'root',
-        password : 'example',
-        database : 'users'};
-
-        var connection = mysql.createConnection(config);
         
-        connection.connect();
-        
-        connection.query('SELECT * FROM USERS', function (error, results, fields) {
-        if (error) throw error;
-        console.log(results);
+        con.query(`SELECT username FROM users WHERE username = '${userinfo.user}'`, function(err, result, fields){
+            if (err) throw err;
+            if (result.length > 0) {
+                res.status(200).json({"Message" : "This account already exists"})
+            } else {
+                con.query(`INSERT INTO users (username, password) VALUES ('${userinfo.user}', '${hash}')`, function(err, result){
+                    if (err) throw err;
+                    res.status(200).json({"Message" : "Account successfully stored"})
+                });
+            }
         });
-        */
-        //connection.end();
-        res.status(200).json({"username": "username", "passwordhash": hash})
-
-
+        
+        //res.status(200).json({"username": "username", "passwordhash": hash})
         // ****************************
     })
 })
 
 app.get('/login', function (req,res) {
     const saltRounds = 12; // Number of Salt rounds
-    
-    // Retrieve LOGIN info from DB (UUID, HASH)
-    // SQL CONNECTION STUFF GOES HERE
 
-    // Place holder for actually recieving a plaintext password from frontend
-    // FORMAT OUT OF THE REQUEST the UUID AND PASSWORD
-    //
-    const myPlaintextPassword = 'password123';
-    const someOtherPlaintextPasword = 'otherpassword123'
-    
-    // Placeholder for retrieving hash from DB
-    var hash = "$2b$12$LnoC8yEBpZmxiU66k/y7FexzOUy0iy3xCR8IZXdsxawrLmHtHz5uK"
-    
-    bcrypt.compare(myPlaintextPassword, hash).then(function(result){
-        res.status(200).json({"message":result})
-    })
 
+    console.log("Connected");
+    con.query(`SELECT * FROM users WHERE username = '${userinfo.user}'`, function(err, result, fields){
+        if (err) throw err;
+        console.log(result)
+        if (result.length == 0) {
+            res.status(200).json({"Message" : "This account does not exist"})
+        } else {
+            bcrypt.compare(userinfo.password, result[0].password).then(function(result){
+                res.status(200).json({"message":result})
+            })
+        }   
+    });
 })
 
 app.listen(8000, "0.0.0.0");

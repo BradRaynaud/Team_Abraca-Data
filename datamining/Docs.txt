@@ -1,0 +1,16 @@
+The Datamining Folder is used by the Python Flask API
+
+Folders:
+
+nutritionalcalculations: Folder for experimental nutrition calculations using the USDA Datamining
+
+src: source files for the flask API
+
+
+Flask API:
+
+New Routes Example: 
+
+@app.route('/<routename>',methods=['GET', 'POST'])
+def <fooname>():
+    return <data>

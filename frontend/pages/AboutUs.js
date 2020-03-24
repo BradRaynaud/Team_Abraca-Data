@@ -115,6 +115,16 @@ export default function AboutUs() {
           {', Clay Forensca'}
           {', Darrell Durousseaux'}
         </Typography>
+        <Link href='/homePage'>
+            <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+            >
+                Back
+            </Button>
+          </Link>
       </Container>
       <footer className={classes.footer}>
         <Container maxWidth="sm">
