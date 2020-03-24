@@ -55,6 +55,31 @@ app.get('/forgot', function (req, res) {
 })
 
 
+app.get("/mongoroute", function(req,res){
+    // Use connect method to connect to the server
+    MongoClient.connect(url, function(err, client) {
+        console.log("Connected successfully to server");
+
+        const db = client.db(dbName);
+        console.log("DB found");        
+        
+        db.collection("recipes").find({}).toArray(function(error, docs)
+        {
+            if (error) throw error;
+            console.log("Found the following records");
+            
+            console.log(docs.name);
+            res.status(200).send(docs);
+        });
+        
+        //console.log(query);
+        
+        client.close();
+        console.log("Connection closed");
+    });
+})
+
+
 
 
 

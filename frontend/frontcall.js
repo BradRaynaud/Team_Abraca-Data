@@ -45,33 +45,3 @@ unirest
       console.log("Fill in Information Again")
     }
   }) 
-
-
-  unirest
-  .get('http://localhost/api/signup')
-  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-  .then((response) => {
-    if (response.status == 200)
-    {
-      console.log("Salt & Hash: Passed")
-    }
-    else
-    {
-      console.log("Salt & Hash: Failed")
-    }
-  })
-
-
-  unirest
-  .get('http://localhost/api/login')
-  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-  .then((response) => {
-    if (response.status == 200)
-    {
-      console.log("Login Verify: Passed")
-    }
-    else
-    {
-      console.log("Login Verify: Failed")
-    }
-  }) 
