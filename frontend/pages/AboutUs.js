@@ -103,16 +103,16 @@ export default function AboutUs() {
           What we have
         </Typography>
         <Typography variant="h6" component="h2" gutterBottom>
-          {'Alpha Version: 0.0.2'}
+          {'Alpha Version: 0.0.3'}
         </Typography>
         <Typography variant="h3" component="h4" gutterBottom>
           Developers
         </Typography>
         <Typography variant="h6" component="h2" gutterBottom>
-          {'Brad Rayunaud'}
+          {'Brad Raynaud'}
           {', Kyle Morales'}
           {', Coleman Levy'}
-          {', Clay Forensca'}
+          {', Clay Fonseca'}
           {', Darrell Durousseaux'}
         </Typography>
         <Link href='/homePage'>

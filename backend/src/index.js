@@ -10,14 +10,7 @@ const url = 'mongodb://root:example@mongo:27017';
 // Database Name
 const dbName = 'foodthings';
 
-var con = mysql.createConnection({
-    host:"mysql",
-    user: "root",
-    password: "example",
-    database: "users"
-});
 
-con.connect();
 
 var options = {
     user: "admin",
@@ -94,8 +87,17 @@ app.get('/datastuff', function (req, res) {
 
 app.get('/signup', function (req, res) {
     const saltRounds = 12; // Number of Salt rounds
+    var con = mysql.createConnection({
+        host:"mysql",
+        user: "root",
+        password: "example",
+        database: "users"
+    });
+    
+    con.connect();
     bcrypt.hash(userinfo.password, saltRounds, function(err, hash){
         // Insert user information to DB here
+
         
         con.query(`SELECT username FROM users WHERE username = '${userinfo.user}'`, function(err, result, fields){
             if (err) throw err;
@@ -116,7 +118,14 @@ app.get('/signup', function (req, res) {
 
 app.get('/login', function (req,res) {
     const saltRounds = 12; // Number of Salt rounds
-
+    var con = mysql.createConnection({
+        host:"mysql",
+        user: "root",
+        password: "example",
+        database: "users"
+    });
+    
+    con.connect();
 
     console.log("Connected");
     con.query(`SELECT * FROM users WHERE username = '${userinfo.user}'`, function(err, result, fields){
