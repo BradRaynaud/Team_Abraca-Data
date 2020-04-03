@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -131,6 +132,10 @@ const tiers = [
 },
 ];
 
+function childWind() {
+  document.getElementById("demo").style.color = "red";
+}
+
 export default function Album() {
   const classes = useStyles();
 
@@ -151,7 +156,7 @@ export default function Album() {
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Week View
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+            <Typography id="demo" variant="h5" align="center" color="textSecondary" paragraph>
               Welcome to the Week View! Now that we have your meals for the week created, 
               you can come here to look over them and click on them to edit or look at 
               their recipes!
@@ -163,8 +168,8 @@ export default function Album() {
           <Grid container spacing={4}>
             {cards.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Link href="/homePage" color="primary" variant="outlined" className={classes.link}>
-                  <Card className={classes.card}>
+                <Card className={classes.card}>
+                  <ButtonBase onClick={event => { childWind() }}>
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
                         Meal
@@ -173,8 +178,8 @@ export default function Album() {
                         A meal will be described here with its entree and side dishes.
                       </Typography>
                     </CardContent>
-                  </Card>
-                </Link>
+                  </ButtonBase>
+                </Card>
               </Grid>
             ))}
           </Grid>
