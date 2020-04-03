@@ -133,7 +133,12 @@ const tiers = [
 ];
 
 function childWind() {
-  document.getElementById("demo").style.color = "red";
+  if (document.getElementById("demo").style.display=="none") {
+    document.getElementById("demo").style.display="block"; 
+  }
+  else {
+    document.getElementById("demo").style.display="none"; 
+  }
 }
 
 export default function Album() {
