@@ -9,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -132,13 +133,23 @@ const tiers = [
 },
 ];
 
-function childWind() {
-  if (document.getElementById("demo").style.display=="none") {
-    document.getElementById("demo").style.display="block"; 
+function childWindUp() {
+  if (document.getElementById("para").style.display=="none") {
+    document.getElementById("para").style.display="block"; 
   }
   else {
-    document.getElementById("demo").style.display="none"; 
+    document.getElementById("para").style.display="none"; 
   }
+  if (document.getElementById("childWindow").style.display=="none") {
+    document.getElementById("childWindow").style.display="block"; 
+  }
+  else {
+    document.getElementById("childWindow").style.display="none"; 
+  }
+}
+
+function childWindDown() {
+  (document.getElementById("childWindow").style.display="none")
 }
 
 export default function Album() {
@@ -157,24 +168,40 @@ export default function Album() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          <Container id="para" maxWidth="sm">
+            <Typography  component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Week View
             </Typography>
-            <Typography id="demo" variant="h5" align="center" color="textSecondary" paragraph>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
               Welcome to the Week View! Now that we have your meals for the week created, 
               you can come here to look over them and click on them to edit or look at 
               their recipes!
             </Typography>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container id="childWindow" cmaxWidth="md">
+          <Paper elevation={3}>
+            <Typography component="h1" variant="h2" align="left" color="textPrimary" gutterBottom>
+              Recipe Here!
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+              Nutrition: Egg
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+              Ingredients: Egg
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+              Recipe: Crack egg, consume egg
+            </Typography>
+          </Paper>
+        </Container>
+        <Container id="cardid" className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <ButtonBase onClick={event => { childWind() }}>
+                  <ButtonBase onClick={event => { childWindUp() }}>
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
                         Meal
