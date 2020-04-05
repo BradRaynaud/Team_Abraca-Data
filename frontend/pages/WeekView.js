@@ -149,7 +149,7 @@ function childWindUp() {
 }
 
 function childWindDown() {
-  (document.getElementById("childWindow").style.display="none")
+  document.getElementById("childWindow").style.display="none";
 }
 
 export default function Album() {
@@ -179,7 +179,7 @@ export default function Album() {
             </Typography>
           </Container>
         </div>
-        <Container id="childWindow" cmaxWidth="md">
+        <Container id="childWindow" cmaxWidth="md" style={{display: "none"}}>
           <Paper elevation={3}>
             <Typography component="h1" variant="h2" align="left" color="textPrimary" gutterBottom>
               Recipe Here!
