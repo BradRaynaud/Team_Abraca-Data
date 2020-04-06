@@ -44,6 +44,9 @@ const useStyles = makeStyles(theme => ({
   heroButtons: {
     marginTop: theme.spacing(4),
   },
+  childButton: {
+    left: '46%',
+  },
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
@@ -134,22 +137,13 @@ const tiers = [
 ];
 
 function childWindUp() {
-  if (document.getElementById("para").style.display=="none") {
-    document.getElementById("para").style.display="block"; 
-  }
-  else {
-    document.getElementById("para").style.display="none"; 
-  }
-  if (document.getElementById("childWindow").style.display=="none") {
-    document.getElementById("childWindow").style.display="block"; 
-  }
-  else {
-    document.getElementById("childWindow").style.display="none"; 
-  }
+  document.getElementById("para").style.display="none"; 
+  document.getElementById("childWindow").style.display="block"; 
 }
 
 function childWindDown() {
   document.getElementById("childWindow").style.display="none";
+  document.getElementById("para").style.display="block";
 }
 
 export default function Album() {
@@ -193,6 +187,9 @@ export default function Album() {
             <Typography variant="h5" align="left" color="textSecondary" paragraph>
               Recipe: Crack egg, consume egg
             </Typography>
+            <Button onClick={event => { childWindDown() }} variant="contained" color="primary" className={classes.childButton}>
+              Back
+            </Button>
           </Paper>
         </Container>
         <Container id="cardid" className={classes.cardGrid} maxWidth="md">
