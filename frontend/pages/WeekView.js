@@ -1,6 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -41,6 +43,9 @@ const useStyles = makeStyles(theme => ({
   },
   heroButtons: {
     marginTop: theme.spacing(4),
+  },
+  childButton: {
+    left: '46%',
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -131,6 +136,16 @@ const tiers = [
 },
 ];
 
+function childWindUp() {
+  document.getElementById("para").style.display="none"; 
+  document.getElementById("childWindow").style.display="block"; 
+}
+
+function childWindDown() {
+  document.getElementById("childWindow").style.display="none";
+  document.getElementById("para").style.display="block";
+}
+
 export default function Album() {
   const classes = useStyles();
 
@@ -147,8 +162,8 @@ export default function Album() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          <Container id="para" maxWidth="sm">
+            <Typography  component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Week View
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
@@ -158,13 +173,32 @@ export default function Album() {
             </Typography>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <Container id="childWindow" cmaxWidth="md" style={{display: "none"}}>
+          <Paper elevation={3}>
+            <Typography component="h1" variant="h2" align="left" color="textPrimary" gutterBottom>
+              Recipe Here!
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+              Nutrition: Egg
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+              Ingredients: Egg
+            </Typography>
+            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+              Recipe: Crack egg, consume egg
+            </Typography>
+            <Button onClick={event => { childWindDown() }} variant="contained" color="primary" className={classes.childButton}>
+              Back
+            </Button>
+          </Paper>
+        </Container>
+        <Container id="cardid" className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Link href="/homePage" color="primary" variant="outlined" className={classes.link}>
-                  <Card className={classes.card}>
+                <Card className={classes.card}>
+                  <ButtonBase onClick={event => { childWindUp() }}>
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
                         Meal
@@ -173,8 +207,8 @@ export default function Album() {
                         A meal will be described here with its entree and side dishes.
                       </Typography>
                     </CardContent>
-                  </Card>
-                </Link>
+                  </ButtonBase>
+                </Card>
               </Grid>
             ))}
           </Grid>
