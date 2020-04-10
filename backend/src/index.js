@@ -6,7 +6,7 @@ var mysql = require('mysql');
 
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
- 
+
 // Database Name
 const dbName = 'foodthings';
 
