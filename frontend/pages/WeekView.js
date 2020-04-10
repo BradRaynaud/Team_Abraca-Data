@@ -68,81 +68,172 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
-
 const tiers = [
 {
-  title:'Monday Breakfast'
+  title:'Monday Breakfast',
+  food: 'Waffles, Scrambled Eggs',
+  ingredients: 'Waffles, Eggs',
+  recipe: 'Cook waffles and scramble eggs',
+  nutrition: 'Calories: 500, Fat: 12mg',
 },
 {
-  title:'Monday Lunch'
+  title:'Monday Lunch',
+  food: 'Chicken Sandwich',
+  ingredients: 'Chicken, bread',
+  recipe: 'Put chicken in between bread slices',
+  nutrition: 'Calories: Chicken, Fat: Chicken',
 },
 {
-  title:'Monday Dinner'
+  title:'Monday Dinner',
+  food: 'Filet Mignon',
+  ingredients: 'Cow',
+  recipe: 'Cook cow',
+  nutrition: 'Cow',
 },
 {
-  title:'Tuesday Breakfast'
+  title:'Tuesday Breakfast',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Tuesday Lunch'
+  title:'Tuesday Lunch',
+  food: 'Mac N Cheese',
+  ingredients: 'Noodles, cheese, butter, milk',
+  recipe: 'Step 1: warm up stove ' +
+  'Step 2: boil water ' + 
+  'Step 3: boil noodles until soft ' +
+  'Step 4: mix in cheese, milk, and butter until it all looks correct',
+  nutrition: 'Calories: Who cares, it tastes good',
 },
 {
-  title:'Tuesday Dinner'
+  title:'Tuesday Dinner',
+  food: 'Chicken Tenders, Fries',
+  ingredients: 'This section is just to check if a really long descriptor can be displayed on the window correctly. It should do so, but gotta be sure.',
+  recipe: 'Fry everything',
+  nutrition: 'Bad',
 },
 {
-  title:'Wednesday Breakfast'
+  title:'Wednesday Breakfast',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Wednesday Lunch'
+  title:'Wednesday Lunch',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Wednesday Dinner'
+  title:'Wednesday Dinner',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Thursday Breakfast'
+  title:'Thursday Breakfast',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Thursday Lunch'
+  title:'Thursday Lunch',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Thursday Dinner'
+  title:'Thursday Dinner',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Friday Breakfast'
+  title:'Friday Breakfast',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Friday Lunch'
+  title:'Friday Lunch',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Friday Dinner'
+  title:'Friday Dinner',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Saturday Breakfast'
+  title:'Saturday Breakfast',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Saturday Lunch'
+  title:'Saturday Lunch',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Saturday Dinner'
+  title:'Saturday Dinner',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Sunday Breakfast'
+  title:'Sunday Breakfast',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Sunday Lunch'
+  title:'Sunday Lunch',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 {
-  title:'Sunday Dinner'
+  title:'Sunday Dinner',
+  food: 'Cucumbers',
+  ingredients: 'Cucumbers',
+  recipe: 'Cut cucumbers',
+  nutrition: 'Calories: still cucumbers',
 },
 ];
 
-function childWindUp() {
+function childWindUp(card) {
   document.getElementById("para").style.display="none"; 
-  document.getElementById("childWindow").style.display="block"; 
+  document.getElementById("cardid").style.display="none"; 
+  document.getElementById("childWindow").style.display="block";
+  document.getElementById("foodid").innerHTML="Foood: " + card.food;
+  document.getElementById("ingid").innerHTML="Ingredients: " + card.ingredients;
+  document.getElementById("nutid").innerHTML="Nutrition: " + card.nutrition; 
+  document.getElementById("recid").innerHTML="Recipe: " + card.recipe;
 }
 
 function childWindDown() {
   document.getElementById("childWindow").style.display="none";
+  document.getElementById("cardid").style.display="block"; 
   document.getElementById("para").style.display="block";
 }
 
@@ -175,16 +266,16 @@ export default function Album() {
         </div>
         <Container id="childWindow" cmaxWidth="md" style={{display: "none"}}>
           <Paper elevation={3}>
-            <Typography component="h1" variant="h2" align="left" color="textPrimary" gutterBottom>
+            <Typography id="foodid" component="h1" variant="h2" align="left" color="textPrimary" style={{wordWrap : "break-word"}} gutterBottom>
               Recipe Here!
             </Typography>
-            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+            <Typography id="nutid" variant="h5" align="left" color="textSecondary" style={{wordWrap : "break-word"}} paragraph>
               Nutrition: Egg
             </Typography>
-            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+            <Typography id="ingid" variant="h5" align="left" color="textSecondary" style={{wordWrap : "break-word"}} paragraph>
               Ingredients: Egg
             </Typography>
-            <Typography variant="h5" align="left" color="textSecondary" paragraph>
+            <Typography id="recid" variant="h5" align="left" color="textSecondary" style={{wordWrap : "break-word"}} paragraph>
               Recipe: Crack egg, consume egg
             </Typography>
             <Button onClick={event => { childWindDown() }} variant="contained" color="primary" className={classes.childButton}>
@@ -195,16 +286,16 @@ export default function Album() {
         <Container id="cardid" className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {tiers.map(tier => (
+              <Grid item key={tier.title} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
-                  <ButtonBase onClick={event => { childWindUp() }}>
+                  <ButtonBase onClick={event => { childWindUp(tier) }}>
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Meal
+                        {tier.title} 
                       </Typography>
-                      <Typography>
-                        A meal will be described here with its entree and side dishes.
+                      <Typography> 
+                        {tier.food}
                       </Typography>
                     </CardContent>
                   </ButtonBase>

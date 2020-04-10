@@ -206,7 +206,6 @@ export default function Pricing() {
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
-          
           {footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h5" color="textPrimary" gutterBottom>
@@ -223,7 +222,6 @@ export default function Pricing() {
               </ul>
             </Grid>
           ))}
-
         </Grid>
         <Box mt={5}>
           <Copyright />
