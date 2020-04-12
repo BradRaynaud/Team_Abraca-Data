@@ -7,3 +7,4 @@ diagnostic.data
 journal
 .vscode
 *.csv
+__pycache__
