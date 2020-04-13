@@ -60,7 +60,7 @@ export default function SignUp() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
         <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h3">
           Edit Requirements
         </Typography>
         <form className={classes.form} noValidate>
