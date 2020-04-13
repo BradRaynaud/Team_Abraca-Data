@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-//import {Link as RouterLink} from 'react-router-dom'
+//import {Link as RouterLink} from 'react-router-dom'; //commented this out temporatily until hook issue is resolved
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -49,10 +49,30 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
-  const classes = useStyles();
+const classes = useStyles(); //when ran it highlights this line of code, no matter where i put it. thows it off somehow??
 
-  return (
+class SignUp extends React.Component { 
+  constructor(props) {
+    super(props)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {
+      firstname:'firstName', lastname:'lastName', email:'email', lastname:'lastName', password:'password' //Id's
+    }
+  }
+
+  handleInputChange(event) { //parsed in, so whatever is inserted can be retrieved as value...(console.log(var))
+    this.setState({value: event.target.value})
+    event.preventDefault()
+  }
+
+  handleSubmit(event) { //handles submits, parse into "form" below
+    event.preventDefault()
+  }
+
+  render(){ //renders
+    //const classes = useStyles(); //I commented this out for testing purposes. there is a duplicate above for testing purposes
+    return(
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -62,14 +82,14 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={this.handleSubmit}>  
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
-                required
+                required 
                 fullWidth
                 id="firstName"
                 label="First Name"
@@ -140,5 +160,8 @@ export default function SignUp() {
         <Copyright />
       </Box>
     </Container>
-  );
+  )
 }
+}
+
+export default SignUp;
