@@ -5,9 +5,12 @@ app = Flask(__name__)
 
 @app.route('/')
 
+# Route for preliminary testing of my algorithm
+# Will provide no input and recieve the test version of my answer
 @app.route('/HelloWorld',methods=['GET', 'POST'])
 def datamining():
-    return "Hello World"
+    plan = genPlan()
+    return plan
 
 
 if __name__ == "__main__":

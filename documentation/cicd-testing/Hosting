@@ -1,0 +1,10 @@
+Something worth considering in terms of hosting:
+
+Amazon now offers SSL certifications for any websites using AWS for their hosting.
+What this means for us is that:
+	- if we are to go to a cloud provider, we will most likely use AWS
+	- the SSL certificate acquisition process will be substantially easier
+	- hosting might be slightly more expensive than initially thought
+
+Kyle will do more research as to what kind of resources will need to be rented.
+This will give more insight as to the capabilities of the hosting as well as the pricing.

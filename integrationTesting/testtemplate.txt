@@ -1,0 +1,15 @@
+Template to follow when writing integration tests:
+
+unirest
+  .get('<api_url>')
+  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+  .then((response) => {
+    if (response.status == 200)
+    {
+      console.log("<Test>: Passed")
+    }
+    else
+    {
+      console.log("<Test>: Failed")
+    }
+  })

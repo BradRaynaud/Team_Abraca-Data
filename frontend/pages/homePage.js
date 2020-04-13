@@ -97,7 +97,7 @@ const tiers = [
     description: ['Change any required nutrition amounts or indicate any special restrictions for your meals.'],
     buttonText: 'Edit',
     buttonVariant: 'outlined',
-    link: '/AboutUs',
+    link: '/EditReqs',
     image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipeEdit.jpg?raw=true",
   },
   {
@@ -206,7 +206,6 @@ export default function Pricing() {
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
-          
           {footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h5" color="textPrimary" gutterBottom>
@@ -223,7 +222,6 @@ export default function Pricing() {
               </ul>
             </Grid>
           ))}
-
         </Grid>
         <Box mt={5}>
           <Copyright />
