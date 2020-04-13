@@ -53,3 +53,20 @@ services:
     volumes:
       - ./backend/src:/app/src
     command: npm test   
+  cadvisor:
+    image: google/cadvisor:latest
+    container_name: cadvisor
+    ports:
+    - 8080:8080
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+    depends_on:
+    - nginx
+    - frontend
+    - datamining
+    - backend
+    - mongo
+    - mysql
