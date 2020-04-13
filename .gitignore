@@ -1,7 +1,10 @@
-*.wt
+ *.wt
 *.lock
 *.bson
 *.turtle
 WiredTiger
 diagnostic.data
 journal
+.vscode
+*.csv
+__pycache__
