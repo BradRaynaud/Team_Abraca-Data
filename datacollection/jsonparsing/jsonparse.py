@@ -1,5 +1,6 @@
 import pandas as pd
 import swifter
+from ast import literal_eval
 
 def dictconvert(item):
 	itemdict = {}
@@ -19,10 +20,12 @@ def ingredientconvert(item):
 		itemdict[str(i)] = item[i]
 	return itemdict
 
-data = pd.read_csv("breakfast.csv",sep=';')
+data = pd.read_csv("breakfast.csv",sep=';',converters={"Tags":literal_eval})
+
+#data.Tags = data.Tags.astype(list)
 
 data["Ingredients"] = data["Ingredients"].swifter.apply(ingredientconvert)
 data["Nutrition"] = data["Nutrition"].swifter.apply(dictconvert)
-data["Tags"] = data["Tags"].swifter.apply(dictconvert)
+#data["Tags"] = data["Tags"].swifter.apply(dictconvert)
 
 data.to_json(r'testjson.json', orient = 'records',lines=True)
