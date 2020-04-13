@@ -103,7 +103,7 @@ app.get("/idquery", function(req, res) {
 app.get("/miningquery", function(req, res) {
     MongoClient.connect(url, function(err, client) {
         console.log("Connected successfully to server");
-
+        //console.log(req.query.tags);
         const db = client.db(dbName);
         var params = {};
         var calories = req.query.calories;
@@ -111,7 +111,7 @@ app.get("/miningquery", function(req, res) {
         console.log(calories);
         if (calories != null){
             //params["Nutrition"] = {0:{$lte: parseInt(calories)}}
-            db.collection("recipes").find({"Nutrition.0":{$lte: parseFloat(calories)}}).toArray(function(error, docs)
+            db.collection("recipes").find({"Tags":req.query.tags.split(","),"Nutrition.0":{$lte: parseFloat(calories)}},{projection:{_id:0,ID:1, Nutrition:1}}).toArray(function(error, docs)
             {
                 console.log("Made it into the if statement")
                 if (error) throw error;
