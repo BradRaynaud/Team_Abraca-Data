@@ -4,6 +4,7 @@ const unirest = require('unirest');
 const bcrypt = require('bcrypt');
 var mysql = require('mysql');
 
+
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
  
@@ -26,7 +27,8 @@ var userinfo = {
 const app = express();
 app.use(express.json());
  
-app.get('/hello_world', function (req, res) {
+app.post('/hello_world', function (req, res) {
+    console.log(req.body);
     res.status(200).json({"message": 'Hello World'});
 })
 

@@ -1,4 +1,5 @@
-﻿import React, {Component} from 'react';
+﻿import React from 'react';
+//import {Link as RouterLink} from 'react-router-dom'; //commented this out temporatily until hook issue is resolved
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,12 +14,13 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      Project Meal Planner
+      <Link color="inherit" href="https:SignIn">
+        Project Meal Planner
+      </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -38,27 +40,79 @@ const useStyles = makeStyles(theme => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(3),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
 
-export default function SignIn() {
-  const classes = useStyles();
+//const classes = useStyles(); //when ran it highlights this line of code, no matter where i put it. thows it off somehow??
 
-  return (
-    <Container component="main" maxWidth="xs">
+class SignUp extends React.Component { 
+  constructor(props) {
+    super(props)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {
+      firstname:'firstName', lastname:'lastName', email:'email', lastname:'lastName', password:'password' //Id's
+    }
+  }
+
+  handleInputChange(event) { //parsed in, so whatever is inserted can be retrieved as value...(console.log(var))
+    this.setState({value: event.target.value})
+    event.preventDefault()
+  }
+
+  handleSubmit(event) { //handles submits, parse into "form" below
+    event.preventDefault()
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.value, password: password.value })
+    };
+    fetch('/api/hello_world', requestOptions)
+  }
+
+  render(){ //renders
+    const classes = makeStyles(theme => ({
+      paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      image: {
+        backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipePaper.jpg?raw=true)',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor:
+          theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      },
+      avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+      },
+      form: {
+        width: '100%', 
+        marginTop: theme.spacing(3),
+      },
+      submit: {
+        margin: theme.spacing(3, 0, 2),
+      },
+    }));
+
+
+
+    return(
+      <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate>
+          Sign In
+        </Typography> 
+      <form onSubmit={this.handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -81,53 +135,20 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
+          <Button 
             type="submit"
-            
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
-            href = "/Dashboard"
-          >
-            Sign In
-          </Button>
-          <Grid container>
-
-            <Grid item xs>
-              <Link href="/Forget" variant="body2">
-                Forgot password?
-              </Link> 
-            </Grid>
-
-
-            <Grid item>
-              <Link href="SignUp" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-
-            {'\n'}
-
-            {'\n'}
-
-            <Grid item>
-              <Link position="absolute" bottom='0'  href="AboutUs" variant="body2">
-                {"Want to learn more about us? "}
-              </Link>
-            </Grid>
-
-          </Grid>
-
+          >Submit</Button>
         </form>
-      </div>
+        </div>
       <Box mt={8}>
         <Copyright />
       </Box>
     </Container>
-  );
+    )
 }
+}
+
+export default SignUp;
