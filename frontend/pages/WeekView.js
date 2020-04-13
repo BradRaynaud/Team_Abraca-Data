@@ -9,9 +9,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper'
+import Paper from '@material-ui/core/Paper';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from 'next/link';
@@ -238,6 +239,12 @@ function childWindDown() {
   document.getElementById("para").style.display="block";
 }
 
+function pageBegin() {
+  document.getElementById("userInput").style.display="none";
+  document.getElementById("cardid").style.display="block"; 
+  document.getElementById("para").style.display="block";
+}
+
 export default function Album() {
   const classes = useStyles();
 
@@ -254,7 +261,7 @@ export default function Album() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
-          <Container id="para" maxWidth="sm">
+          <Container id="para" maxWidth="sm" style={{display: "none"}}>
             <Typography  component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Week View
             </Typography>
@@ -265,6 +272,25 @@ export default function Album() {
             </Typography>
           </Container>
         </div>
+        <Container id="userInput" maxWidth="xs">
+          <Grid container spacing={2}>
+            <Typography variant="h5" color="textPrimary">
+              Please enter your username:
+            </Typography>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                id="username"
+                label="Username"
+                name="username">
+              </TextField>
+            </Grid>
+            <Button onClick={event => { pageBegin() }} variant="contained" color="primary" fullWidth>
+              Submit
+            </Button>
+          </Grid>
+        </Container>
         <Container id="childWindow" cmaxWidth="md" style={{display: "none"}}>
           <Paper elevation={3}>
             <Typography id="foodid" component="h1" variant="h2" align="left" color="textPrimary" style={{wordWrap : "break-word"}} gutterBottom>
@@ -284,7 +310,7 @@ export default function Album() {
             </Button>
           </Paper>
         </Container>
-        <Container id="cardid" className={classes.cardGrid} maxWidth="md">
+        <Container id="cardid" className={classes.cardGrid} maxWidth="md" style={{display: "none"}}>
           {/* End hero unit */}
           <Grid container spacing={4}>
             {tiers.map(tier => (
