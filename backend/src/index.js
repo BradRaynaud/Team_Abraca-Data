@@ -7,7 +7,7 @@ var mysql = require('mysql');
 
 // Connection URL
 const url = 'mongodb://root:example@mongo:27017';
- 
+
 // Database Name
 const dbName = 'foodthings';
 
@@ -70,6 +70,75 @@ app.get("/mongoinsert", function(req, res) {
             console.log("1 recipe inserted");
         });
 
+        client.close();
+        console.log("Connection closed");
+    });
+})
+
+app.get("/idquery", function(req, res) {
+    MongoClient.connect(url, function(err, client) {
+        console.log("Connected successfully to server");
+
+        const db = client.db(dbName);
+        
+        var params = {};
+        params["ID"] = parseInt(req.query.id)
+
+        console.log(params);
+
+        console.log("DB found");        
+        
+        db.collection("recipes").find(params).toArray(function(error, docs)
+        {
+            if (error) throw error;
+            console.log("Found the following records");
+            
+            console.log(docs.name);
+            res.status(200).send(docs);
+        });
+        
+        client.close();
+        console.log("Connection closed");
+    });
+})
+
+app.get("/miningquery", function(req, res) {
+    MongoClient.connect(url, function(err, client) {
+        console.log("Connected successfully to server");
+        //console.log(req.query.tags);
+        const db = client.db(dbName);
+        var params = {};
+        var calories = req.query.calories;
+        params["Tags"] = req.query.tags.split(",");
+        console.log(calories);
+        if (calories != null){
+            //params["Nutrition"] = {0:{$lte: parseInt(calories)}}
+            db.collection("recipes").find({"Tags":req.query.tags.split(","),"Nutrition.0":{$lte: parseFloat(calories)}},{projection:{_id:0,ID:1, Nutrition:1}}).toArray(function(error, docs)
+            {
+                console.log("Made it into the if statement")
+                if (error) throw error;
+                console.log("Found the following records");
+                console.log(docs.name);
+                res.status(200).send(docs);
+            });
+        } else {
+            db.collection("recipes").find(params).toArray(function(error, docs)
+            {
+                if (error) throw error;
+                console.log("Found the following records");
+                console.log(docs.name);
+                res.status(200).send(docs);
+            });
+        }
+        
+        
+
+        console.log(params);
+
+        console.log("DB found");        
+        //res.status(200).send(params)
+        
+        
         client.close();
         console.log("Connection closed");
     });
