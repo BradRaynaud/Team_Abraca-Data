@@ -227,7 +227,7 @@ function childWindUp(card) {
   document.getElementById("para").style.display="none"; 
   document.getElementById("cardid").style.display="none"; 
   document.getElementById("childWindow").style.display="block";
-  document.getElementById("foodid").innerHTML="Foood: " + card.food;
+  document.getElementById("foodid").innerHTML="Food: " + card.food;
   document.getElementById("ingid").innerHTML="Ingredients: " + card.ingredients;
   document.getElementById("nutid").innerHTML="Nutrition: " + card.nutrition; 
   document.getElementById("recid").innerHTML="Recipe: " + card.recipe;
