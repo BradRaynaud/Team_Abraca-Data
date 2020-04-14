@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
 
 //const classes = useStyles(); //when ran it highlights this line of code, no matter where i put it. thows it off somehow??
 
-class SignUp extends React.Component { 
+class SignIn extends React.Component { 
   constructor(props) {
     super(props)
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -151,4 +151,4 @@ class SignUp extends React.Component {
 }
 }
 
-export default SignUp;
+export default SignIn;
