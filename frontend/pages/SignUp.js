@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-//import {Link as RouterLink} from 'react-router-dom'
+//import {Link as RouterLink} from 'react-router-dom'; //commented this out temporatily until hook issue is resolved
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -14,13 +14,11 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https:SignIn">
+      <Link color="inherit" href="/SignIn">
         Project Meal Planner
       </Link>{' '}
       {new Date().getFullYear()}
@@ -49,96 +47,108 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
-  const classes = useStyles();
+//const classes = useStyles(); //when ran it highlights this line of code, no matter where i put it. thows it off somehow??
 
-  return (
-    <Container component="main" maxWidth="xs">
+class SignUp extends React.Component { 
+  constructor(props) {
+    super(props)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {
+      firstname:'firstName', lastname:'lastName', email:'email', lastname:'lastName', password:'password' //Id's
+    }
+  }
+
+  handleInputChange(event) { //parsed in, so whatever is inserted can be retrieved as value...(console.log(var))
+    this.setState({value: event.target.value})
+    event.preventDefault()
+  }
+
+  handleSubmit(event) { //handles submits, parse into "form" below
+    event.preventDefault()
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.value, password: password.value })
+    };
+    fetch('/api/hello_world', requestOptions)
+  }
+
+  render(){ //renders
+    const classes = makeStyles(theme => ({
+      paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      image: {
+        backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipePaper.jpg?raw=true)',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor:
+          theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      },
+      avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+      },
+      form: {
+        width: '100%', 
+        marginTop: theme.spacing(3),
+      },
+      submit: {
+        margin: theme.spacing(3, 0, 2),
+      },
+    }));
+
+
+
+    return(
+      <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I am ready to go on an adventure with Project Meal Planner."
-              />
-            </Grid>
-          </Grid>
-          <Button
+          Sign Up
+        </Typography> 
+      <form onSubmit={this.handleSubmit}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+          <Button 
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
-            href = "SignIn"
-          >
-            Sign Up
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="/SignIn" variant="body2">
-                Already with us? Sign in
-              </Link>
-            </Grid>
-          </Grid>
+          >Submit</Button>
         </form>
-      </div>
-      <Box mt={5}>
+        </div>
+      <Box mt={8}>
         <Copyright />
       </Box>
     </Container>
-  );
+    )
 }
+}
+
+export default SignUp;

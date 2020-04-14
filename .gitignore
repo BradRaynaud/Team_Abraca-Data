@@ -1,4 +1,4 @@
-*.wt
+ *.wt
 *.lock
 *.bson
 *.turtle
@@ -7,3 +7,4 @@ diagnostic.data
 journal
 .vscode
 *.csv
+__pycache__

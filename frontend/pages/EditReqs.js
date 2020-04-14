@@ -25,46 +25,90 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  image: {
-    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipePaper.jpg?raw=true)',
-    backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', 
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
+class EditReqs extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {
+      firstname:'firstName', lastname:'lastName', email:'email', lastname:'lastName', password:'password' //Id's
+    }
+  }
 
-export default function SignUp() {
-  const classes = useStyles();
+  handleInputChange(event) { //parsed in, so whatever is inserted can be retrieved as value...(console.log(var))
+    this.setState({value: event.target.value})
+    event.preventDefault()
+  }
 
+  handleSubmit(event) { //handles submits, parse into "form" below
+    event.preventDefault()
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        ID: ID.value, 
+        calories: calorie.value, 
+        fat: fat.value, 
+        cholesterol: cholesterol.value, 
+        protein: protein.value, 
+        sodium: sodium.value, 
+        carbohydrate: carbohydrate.value
+      })
+    };
+    fetch('/api/hello_world', requestOptions)
+  }
+
+
+
+
+  
+  render(){
+  const classes = makeStyles(theme => ({
+    paper: {
+      marginTop: theme.spacing(8),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    image: {
+      backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipePaper.jpg?raw=true)',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor:
+        theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+    avatar: {
+      margin: theme.spacing(1),
+      backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+      width: '100%', 
+      marginTop: theme.spacing(3),
+    },
+    submit: {
+      margin: theme.spacing(3, 0, 2),
+    },
+  }));
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
         <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h3">
           Edit Requirements
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={this.handleSubmit}>
           <Grid container spacing={2}>
+          <Grid item xs={12}>
+              <TextField
+                name="User ID"
+                variant="outlined"
+                fullWidth
+                id="ID"
+                label="User ID"
+                autoFocus
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 name="calorie"
@@ -120,26 +164,8 @@ export default function SignUp() {
                 name="carbohydrate"
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="Vegetarian"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="Vegan"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="Keto"
-              />
-            </Grid>
           </Grid>
-          <Link href='/homePage'>
+          
             <Button
                 type="submit"
                 fullWidth
@@ -149,7 +175,7 @@ export default function SignUp() {
             >
                 Submit
             </Button>
-          </Link>
+          
         </form>
       </div>
       <Box mt={5}>
@@ -157,4 +183,7 @@ export default function SignUp() {
       </Box>
     </Container>
   );
+  }
 }
+
+export default EditReqs;
