@@ -140,11 +140,11 @@ export default function Pricing() {
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
           </Typography>
-          <Link href="/SignUp" color="primary" variant="outlined" className={classes.link}>
-            <Button color="primary" variant="outlined">Sign Up</Button>
+          <Link href="/SignUp" className={classes.link}>
+            <Button color="primary" variant="contained">Sign Up</Button>
           </Link>
-          <Link href="/SignIn" color="primary" variant="outlined" className={classes.link}>
-            <Button color="primary" variant="outlined">Sign In</Button>
+          <Link href="/SignIn" className={classes.link}>
+            <Button color="primary" variant="contained">Sign In</Button>
           </Link>
         </Toolbar>
       </AppBar>
