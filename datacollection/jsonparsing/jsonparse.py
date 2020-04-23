@@ -1,4 +1,5 @@
 import pandas as pd
+import argparse
 import swifter
 from ast import literal_eval
 
@@ -21,11 +22,15 @@ def ingredientconvert(item):
 		itemdict[str(i)] = item[i]
 	return itemdict
 
-data = pd.read_csv("breakfast.csv",sep=';',converters={"Tags":literal_eval})
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", required=True, type=str)
+parser.add_argument("-o", required=True, type=str)
+args = parser.parse_args()
+
+data = pd.read_csv(args.i,sep=';',converters={"Tags":literal_eval})
 
 
 data["Ingredients"] = data["Ingredients"].swifter.apply(ingredientconvert)
 data["Nutrition"] = data["Nutrition"].swifter.apply(nutritionconvert)
-#data["Tags"] = data["Tags"].swifter.apply(dictconvert)
 
-data.to_json(r'testjson.json', orient = 'records',lines=True)
+data.to_json(args.o, orient = 'records',lines=True)
