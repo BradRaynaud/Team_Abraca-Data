@@ -259,6 +259,16 @@ function pageBegin() {
   document.getElementById("userInput").style.display="none";
   document.getElementById("cardid").style.display="block"; 
   document.getElementById("para").style.display="block";
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var myObj = JSON.parse(this.responseText);
+      tiers[0].food = myObj[0].Title;
+    }
+  };
+  xmlhttp.open("GET", "http://localhost/api/idquery?id=1", true); // true for asynchronous 
+  xmlhttp.send();
 }
 
 export default function Album() {
