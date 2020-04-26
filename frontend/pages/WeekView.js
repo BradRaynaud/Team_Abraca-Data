@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import { fade } from '@material-ui/core/styles/colorManipulator'
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from 'next/link';
@@ -42,15 +43,23 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
   },
+  extraContent: {
+    backgroundColor: theme.palette.background.paper,
+    marginTop: theme.spacing(4),
+  },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
   childButton: {
     left: '46%',
   },
+  childText: {
+    paddingLeft: theme.spacing(2),
+  },
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+    backgroundColor: fade("#e8f5e9", 0.7),
   },
   card: {
     height: '100%',
@@ -67,6 +76,13 @@ const useStyles = makeStyles(theme => ({
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
+  },
+  image: {
+    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/MealPrep1.jpg?raw=true)',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundPosition: 'center',
+    marginBottom: theme.spacing(1),
   },
 }));
 
@@ -254,14 +270,13 @@ export default function Album() {
       <AppBar position="relative" color="default" elevation={0} className={classes.appBar}>
         <Toolbar>
           <Link href="/homePage" color="primary" variant="outlined" className={classes.link}>
-            <Button color="primary" variant="outlined">Home</Button>
+            <Button color="primary" variant="contained">Home</Button>
           </Link>
         </Toolbar>
       </AppBar>
-      <main>
+      <main className={classes.image}>
         {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container id="para" maxWidth="sm" style={{display: "none"}}>
+          <Container id="para" maxWidth="md" style={{display: "none"}} className={classes.heroContent}>
             <Typography  component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Week View
             </Typography>
@@ -271,8 +286,7 @@ export default function Album() {
               their recipes!
             </Typography>
           </Container>
-        </div>
-        <Container id="userInput" maxWidth="xs">
+        <Container id="userInput" maxWidth="xs" className={classes.extraContent}>
           <Grid container spacing={2}>
             <Typography variant="h5" color="textPrimary">
               Please enter your username:
@@ -291,18 +305,22 @@ export default function Album() {
             </Button>
           </Grid>
         </Container>
-        <Container id="childWindow" cmaxWidth="md" style={{display: "none"}}>
+        <Container id="childWindow" cmaxWidth="md" style={{display: "none"}} className={classes.heroButtons}>
           <Paper elevation={3}>
-            <Typography id="foodid" component="h1" variant="h2" align="left" color="textPrimary" style={{wordWrap : "break-word"}} gutterBottom>
+            <Typography id="foodid" component="h1" variant="h2" align="left" color="textPrimary" 
+            style={{wordWrap : "break-word"}} gutterBottom className={classes.childText}>
               Recipe Here!
             </Typography>
-            <Typography id="nutid" variant="h5" align="left" color="textSecondary" style={{wordWrap : "break-word"}} paragraph>
+            <Typography id="nutid" variant="h5" align="left" color="textSecondary" 
+            style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Nutrition: Egg
             </Typography>
-            <Typography id="ingid" variant="h5" align="left" color="textSecondary" style={{wordWrap : "break-word"}} paragraph>
+            <Typography id="ingid" variant="h5" align="left" color="textSecondary" 
+            style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Ingredients: Egg
             </Typography>
-            <Typography id="recid" variant="h5" align="left" color="textSecondary" style={{wordWrap : "break-word"}} paragraph>
+            <Typography id="recid" variant="h5" align="left" color="textSecondary" 
+            style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Recipe: Crack egg, consume egg
             </Typography>
             <Button onClick={event => { childWindDown() }} variant="contained" color="primary" className={classes.childButton}>
