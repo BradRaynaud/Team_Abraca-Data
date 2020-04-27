@@ -132,3 +132,17 @@ unirest
       console.log("ID Query: Passed")
     }
   })
+
+  unirest
+  .get('http://localhost/api/miningquery?tags=BK&calories=1000')
+  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+  .then((response) => {
+    if (response.status == 200)
+    {
+      console.log("Mining Query: Failed")
+    }
+    else
+    {
+      console.log("Mining Query: Passed")
+    }
+  })
