@@ -14,13 +14,15 @@ def nutritionconvert(item):
 	return itemdict
 
 def ingredientconvert(item):
-	itemdict = {}
 	item = item[3:]
 	item = item.split('***')
+	ingrstring = ''
 	for i in range(len(item)):
 		#item[i] = item[i][1:-1]
-		itemdict[str(i)] = item[i]
-	return itemdict
+		ingrstring += item[i]
+		if (i < len(item) - 1):
+			ingrstring += ', '
+	return ingrstring
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", required=True, type=str)
