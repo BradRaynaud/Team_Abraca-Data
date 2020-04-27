@@ -120,15 +120,15 @@ unirest
   })
 
   unirest
-  .get('http://localhost/api/datastuff')
+  .get('http://localhost/api/idquery?id=1')
   .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
   .then((response) => {
     if (response.status == 200)
     {
-      console.log("Mongo Populate: Failed")
+      console.log("ID Query: Failed")
     }
     else
     {
-      console.log("Mongo Populate: Passed")
+      console.log("ID Query: Passed")
     }
   })
