@@ -127,7 +127,7 @@ app.get("/miningquery", function(req, res) {
                 res.status(200).send(docs);
             });
         } else {
-            db.collection("recipes").find(params).toArray(function(error, docs)
+            db.collection("recipes").find(params, {projection:{_id:0,ID:1, Nutrition:1}}).toArray(function(error, docs)
             {
                 if (error) throw error;
                 console.log("Found the following records");
