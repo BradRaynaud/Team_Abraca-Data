@@ -229,13 +229,14 @@ app.get('/mealplanget', function (req,res) {
     con.connect();
 
     console.log("Connected");
-    con.query(`SELECT * FROM users WHERE username = '${userinfo.user}'`, function(err, result, fields){
+    con.query(`SELECT meal1,meal2,meal3,meal4,meal5,meal6,meal7,meal8,meal9,meal10,meal11,meal12,meal13,meal14,meal15,meal16,meal17,meal18,meal19,meal20,meal21 FROM mealplans WHERE username = '${user}'`, function(err, result, fields){
         if (err) throw err;
         console.log(result)
         if (result.length == 0) {
             res.status(200).json({"Message" : "This account does not exist"})
         } else {
-            res.status(200).json({"message":result})            
+            var mealplan = [result[0].meal1,result[0].meal2,result[0].meal3,result[0].meal4,result[0].meal5,result[0].meal6,result[0].meal7,result[0].meal8,result[0].meal9,result[0].meal10,result[0].meal11,result[0].meal12,result[0].meal13,result[0].meal14,result[0].meal15,result[0].meal16,result[0].meal17,result[0].meal18,result[0].meal19,result[0].meal20,result[0].meal21];
+            res.status(200).json({mealplan})            
         }   
     });
 })
