@@ -1,5 +1,7 @@
 WE HAVE DECIDED TO NOT PURSUE A CICD PIPELINE FOR THE SCOPE OF THIS PROJECT
 
+CICD has real world benefits when it comes to development, but we have deemed it unnecessary for what we plan to accomplish for this project.
+
 HOWEVER, IF WE DECIDE TO GO BACK ON THAT, DOCUMENTATION FROM BEFORE IS HERE:
 
 CircleCI is what we will use for our CI/CD pipeline for automated testing.

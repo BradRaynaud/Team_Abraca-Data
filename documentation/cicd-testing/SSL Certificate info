@@ -2,5 +2,10 @@ We are using a DigitalOcean droplet for our website hosting.
 This means that our SSL Certificate is acquired through our DigitalOcean account.
 The account is under Brad's name and will be configured before deployment.
 
+
+
+
+
+ALL DOCUMENTATION BELOW THIS LINE IS OUTDATED=====================================================
 AWS has a certificate manager. Link:
 https://aws.amazon.com/certificate-manager/
