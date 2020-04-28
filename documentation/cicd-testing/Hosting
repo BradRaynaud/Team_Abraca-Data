@@ -1,3 +1,10 @@
+We have decided to go with a DigitalOcean droplet for our hosting.
+
+DigitalOcean is a cloud service that we can use to host our website for 24/7 access.
+
+All that needs to happen is one person has an account and configures hosting as well as SSL certificate acquisition.
+The process should take no longer than a few hours and is the final thing we do in terms of deploying the project.
+
 Something worth considering in terms of hosting:
 
 Amazon now offers SSL certifications for any websites using AWS for their hosting.
