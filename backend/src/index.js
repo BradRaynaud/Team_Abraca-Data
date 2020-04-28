@@ -217,6 +217,29 @@ app.get('/login', function (req,res) {
     });
 })
 
+app.get('/mealplanget', function (req,res) {
+    var user = req.query.user
+    var con = mysql.createConnection({
+        host:"mysql",
+        user: "root",
+        password: "example",
+        database: "mealplans"
+    });
+    
+    con.connect();
+
+    console.log("Connected");
+    con.query(`SELECT * FROM users WHERE username = '${userinfo.user}'`, function(err, result, fields){
+        if (err) throw err;
+        console.log(result)
+        if (result.length == 0) {
+            res.status(200).json({"Message" : "This account does not exist"})
+        } else {
+            res.status(200).json({"message":result})            
+        }   
+    });
+})
+
 app.listen(8000, "0.0.0.0");
 
 
