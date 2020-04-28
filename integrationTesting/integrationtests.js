@@ -146,3 +146,17 @@ unirest
       console.log("Mining Query: Passed")
     }
   })
+
+  unirest
+  .get('http://localhost/api/mealplantest')
+  .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+  .then((response) => {
+    if (response.status == 200)
+    {
+      console.log("Meal Plan Query: Failed")
+    }
+    else
+    {
+      console.log("Meal Plan Query: Passed")
+    }
+  })
