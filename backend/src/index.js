@@ -32,6 +32,11 @@ app.post('/hello_world', function (req, res) {
     res.status(200).json({"message": 'Hello World'});
 })
 
+app.get('/mealplantest', function (req, res) {
+    console.log(req.body);
+    res.status(200).json({mealplan : [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,166,17,18,19,20,21]});
+})
+
 app.get("/mongoroute", function(req,res){
     // Use connect method to connect to the server
     MongoClient.connect(url, function(err, client) {
@@ -122,7 +127,7 @@ app.get("/miningquery", function(req, res) {
                 res.status(200).send(docs);
             });
         } else {
-            db.collection("recipes").find(params).toArray(function(error, docs)
+            db.collection("recipes").find(params, {projection:{_id:0,ID:1, Nutrition:1}}).toArray(function(error, docs)
             {
                 if (error) throw error;
                 console.log("Found the following records");
