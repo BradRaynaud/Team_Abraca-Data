@@ -108,14 +108,6 @@ const tiers = [
     link: '/WeekView',
     image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Chef2.jpeg?raw=true",
   },
-  {
-    title: 'Saved Meals',
-    description: ['If you have saved any previous meal plans, you can see them on this page.'],
-    buttonText: 'Search',
-    buttonVariant: 'outlined',
-    link: '/ContactUs',
-    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Fridge1.jpg?raw=true)",
-  },
 ];
 
 const footers = [
@@ -166,8 +158,8 @@ export default function Pricing() {
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map(tier => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+            // Enterprise card is full width at sm breakpoint // Darrell changed "md = {4}", just incase someone wants to change it back.. -Darrell
+            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={6}> 
               <Card>
                 <CardHeader
                   title={tier.title}
