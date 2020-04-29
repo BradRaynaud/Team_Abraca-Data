@@ -61,14 +61,20 @@ class EditReqs extends React.Component {
         carbohydrate: carbohydrate.value
       })
     };
-    fetch('/api/datastuff', requestOptions);
-    console.log("I get here");
-    Router.push('/homePage')
+    var numbers = /^[0-9]+$/;
+    if(calorie.value.match(numbers) || fat.value.match(numbers) || cholesterol.value.match(numbers) || protein.value.match(numbers) || sodium.value.match(numbers) || carbohydrate.value.match(numbers)){
+      console.log("Valid Entry");
+      
+      fetch('/api/datastuff', requestOptions);
+      //Router.push('/homePage')
+    }
+    else{
+      console.log("Invalid Entry")
+      // DO SOMETHING HERE
+    }
+
 
   }
-
-
-
 
   
   render(){
@@ -109,6 +115,7 @@ class EditReqs extends React.Component {
       flexGrow: 1,
     }
   }));
+  
   return (
     <Container component="main" maxWidth="xs">
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
@@ -218,6 +225,22 @@ class EditReqs extends React.Component {
                 Submit
             </Button>
         </form>
+        <Alert
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+        >
+          Close me!
+        </Alert>
       </div>
       <Box mt={5}>
         <Copyright />
