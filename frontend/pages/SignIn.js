@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -26,6 +27,8 @@ function Copyright() {
     </Typography>
   );
 }
+
+
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -47,15 +50,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-//const classes = useStyles(); //when ran it highlights this line of code, no matter where i put it. thows it off somehow??
 
-class SignUp extends React.Component { 
+class SignIn extends React.Component { 
   constructor(props) {
     super(props)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.state = {
-      firstname:'firstName', lastname:'lastName', email:'email', lastname:'lastName', password:'password' //Id's
+      firstname:'firstName', lastname:'lastName', email:'email', lastname:'lastName', password:'password'
     }
   }
 
@@ -72,9 +74,11 @@ class SignUp extends React.Component {
       body: JSON.stringify({ email: email.value, password: password.value })
     };
     fetch('/api/hello_world', requestOptions)
+  
   }
 
-  render(){ //renders
+  render(){ 
+
     const classes = makeStyles(theme => ({
       paper: {
         marginTop: theme.spacing(8),
@@ -135,12 +139,16 @@ class SignUp extends React.Component {
             id="password"
             autoComplete="current-password"
           />
-          <Button 
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-          >Submit</Button>
+          <Link href = "/homePage">
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+            > Submit
+            
+            </Button>
+          </Link>
         </form>
         </div>
       <Box mt={8}>
@@ -151,4 +159,5 @@ class SignUp extends React.Component {
 }
 }
 
-export default SignUp;
+
+export default SignIn;
