@@ -218,7 +218,8 @@ app.get('/login', function (req,res) {
 })
 
 app.get('/mealplanget', function (req,res) {
-    var user = req.query.user
+    var user = req.query.user;
+    user = user.toLowerCase();
     var con = mysql.createConnection({
         host:"mysql",
         user: "root",
@@ -243,6 +244,7 @@ app.get('/mealplanget', function (req,res) {
 
 app.get('/mealplanstore', function (req,res) {
     var user = req.query.user;
+    user = user.toLowerCase();
     var recipes = req.query.recipes.split(",");
     //recipes.unshift(user);
     var con = mysql.createConnection({
