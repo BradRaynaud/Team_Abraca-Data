@@ -21,10 +21,7 @@ import Link from 'next/link';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="//material-ui.com/">
-        Project Meal Planner
-      </Link>{' '}
+      {'Copyright © Project Meal Planner '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>

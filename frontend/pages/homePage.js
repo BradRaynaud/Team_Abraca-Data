@@ -21,10 +21,7 @@ import Box from '@material-ui/core/Box';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="/AboutUs">
-        Project Meal Planner
-      </Link>{' '}
+      {'Copyright © Project Meal Planner '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>

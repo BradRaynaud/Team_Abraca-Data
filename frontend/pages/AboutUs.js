@@ -17,10 +17,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary">
-      {'Copyright © '}
-      <Link color="inherit" href="/SignIn">
-        Project Meal Planner
-      </Link>{' '}
+      {'Copyright © Project Meal Planner '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
