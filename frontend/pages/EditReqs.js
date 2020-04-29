@@ -6,19 +6,25 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from 'next/link';
+import { withRouter } from 'next/router';
+import Router from 'next/router'
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
+      {'Copyright © Project Meal Planner '}
+      
+        
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -55,7 +61,10 @@ class EditReqs extends React.Component {
         carbohydrate: carbohydrate.value
       })
     };
-    fetch('/api/datastuff', requestOptions)
+    fetch('/api/datastuff', requestOptions);
+    console.log("I get here");
+    Router.push('/homePage')
+
   }
 
 
@@ -71,7 +80,7 @@ class EditReqs extends React.Component {
       alignItems: 'center',
     },
     image: {
-      backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipePaper.jpg?raw=true)',
+      backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/dev/frontend/pages/images/RecipePaper.jpg?raw=true)',
       backgroundRepeat: 'no-repeat',
       backgroundColor:
         theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -89,9 +98,28 @@ class EditReqs extends React.Component {
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
+    appBar: {
+      backgroundColor: 'darkgrey',
+      borderBottom: `1px solid ${theme.palette.divider}`,
+    },
+    toolbar: {
+      flexWrap: 'wrap',
+    },
+    toolbarTitle: {
+      flexGrow: 1,
+    }
   }));
   return (
     <Container component="main" maxWidth="xs">
+      <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
+        <Toolbar className={classes.toolbar}>
+          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+          </Typography>
+          <Link href="/homePage">
+            <Button color="primary" variant="contained">Home</Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
       <CssBaseline />
         <div className={classes.paper}>
         <Typography component="h1" variant="h3">
@@ -126,6 +154,9 @@ class EditReqs extends React.Component {
                 id="fat"
                 label="Optimal Fat Amount"
                 name="fat"
+                InputProps={{
+                  endAdornment: <InputAdornment position="end">Grams</InputAdornment>,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -135,6 +166,9 @@ class EditReqs extends React.Component {
                 id="cholesterol"
                 label="Optimal Cholesterol Amount"
                 name="cholesterol"
+                InputProps={{
+                  endAdornment: <InputAdornment position="end">Milligrams</InputAdornment>,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -144,6 +178,9 @@ class EditReqs extends React.Component {
                 id="protein"
                 label="Optimal Protein Amount"
                 name="protein"
+                InputProps={{
+                  endAdornment: <InputAdornment position="end">Grams</InputAdornment>,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -153,6 +190,9 @@ class EditReqs extends React.Component {
                 id="sodium"
                 label="Optimal Sodium Amount"
                 name="sodium"
+                InputProps={{
+                  endAdornment: <InputAdornment position="end">Milligrams</InputAdornment>,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -162,10 +202,12 @@ class EditReqs extends React.Component {
                 id="carbohydrate"
                 label="Optimal Carbohydrate Amount"
                 name="carbohydrate"
+                InputProps={{
+                  endAdornment: <InputAdornment position="end">Grams</InputAdornment>,
+                }}
               />
             </Grid>
           </Grid>
-          
             <Button
                 type="submit"
                 fullWidth
@@ -175,7 +217,6 @@ class EditReqs extends React.Component {
             >
                 Submit
             </Button>
-          
         </form>
       </div>
       <Box mt={5}>
@@ -186,4 +227,4 @@ class EditReqs extends React.Component {
   }
 }
 
-export default EditReqs;
+export default withRouter(EditReqs);

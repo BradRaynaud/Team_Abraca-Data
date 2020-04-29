@@ -23,7 +23,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="/AboutUs">
-        Your Website
+        Project Meal Planner
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
