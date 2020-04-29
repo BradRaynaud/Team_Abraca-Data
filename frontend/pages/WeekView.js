@@ -330,7 +330,7 @@ function pageBegin(username) {
         }
       };
   
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[0].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[0].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -350,7 +350,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[1].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[1].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -370,7 +370,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[2].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[2].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -390,7 +390,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[3].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[3].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -410,7 +410,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[4].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[4].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -430,7 +430,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[5].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[5].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -450,7 +450,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[6].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[6].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -470,7 +470,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[7].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[7].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -490,7 +490,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[8].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[8].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -510,7 +510,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[9].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[9].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -530,7 +530,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[10].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[10].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -550,7 +550,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[11].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[11].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -570,7 +570,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[12].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[12].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -590,7 +590,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[13].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[13].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -610,7 +610,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[14].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[14].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -630,7 +630,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[15].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[15].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -650,7 +650,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[16].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[16].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -670,7 +670,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[17].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[17].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -690,7 +690,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[18].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[18].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -710,7 +710,7 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[19].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[19].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
 
@@ -730,12 +730,12 @@ function pageBegin(username) {
         }
       };
       
-      call = "http://localhost/api/idquery?id=" + numArray.mealplan[20].toString();
+      call = "/api/idquery?id=" + numArray.mealplan[20].toString();
       xmlhttp.open("GET", call, true); // true for asynchronous 
       xmlhttp.send();
     }
   };
-  var Query = "http://localhost/api/mealplanget?user="+username
+  var Query = "/api/mealplanget?user="+username
   xmlhttp.open("GET", Query, true); // true for asynchronous 
   xmlhttp.send();
 
