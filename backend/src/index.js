@@ -241,6 +241,39 @@ app.get('/mealplanget', function (req,res) {
     });
 })
 
+app.get('/mealplanstore', function (req,res) {
+    var user = req.query.user;
+    var recipes = req.query.recipes.split(",");
+    //recipes.unshift(user);
+    var con = mysql.createConnection({
+        host:"mysql",
+        user: "root",
+        password: "example",
+        database: "mealplans"
+    });
+    
+    con.connect();
+    console.log("Connected");
+
+    con.query(`SELECT * FROM mealplans WHERE username = '${user}'`, function(err, result, fields){
+        if (err) throw err;
+        console.log(result)
+        if (result.length != 0) {
+            con.query(`REPLACE INTO mealplans VALUES ('${user}',${recipes[0]},${recipes[1]},${recipes[2]},${recipes[3]},${recipes[4]},${recipes[5]},${recipes[6]},${recipes[7]},${recipes[8]},${recipes[9]},${recipes[10]},${recipes[11]},${recipes[12]},${recipes[13]},${recipes[14]},${recipes[15]},${recipes[16]},${recipes[17]},${recipes[18]},${recipes[19]},${recipes[20]})`, function(err, result, fields){
+                console.log(result)
+                if (err) throw err;
+            });
+            res.status(200).json({"Message" : "Mealplan Replaced"})
+        } else {
+            con.query(`INSERT INTO mealplans VALUES ${recipes}`, function(err, result, fields){
+                console.log(result)
+                if (err) throw err;
+            });
+            res.status(200).json({"Message" : "Mealplan Inserted"})            
+        }   
+    });
+})
+
 app.listen(8000, "0.0.0.0");
 
 
