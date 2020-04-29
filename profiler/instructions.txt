@@ -1,0 +1,7 @@
+Instructions on how to use both profilers:
+Docker stats:
+sudo docker stats
+
+cAdvisor:
+when visiting site locally, add the 8080 port at the end of the address
+for example: localhost:8080

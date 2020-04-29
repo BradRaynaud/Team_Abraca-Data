@@ -23,7 +23,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="/AboutUs">
-        Your Website
+        Project Meal Planner
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   image: {
-    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/TableAlt2.jpg?raw=true)',
+    backgroundImage: 'url(https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/TableAlt2.jpg?raw=true)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -98,7 +98,7 @@ const tiers = [
     buttonText: 'Edit',
     buttonVariant: 'outlined',
     link: '/EditReqs',
-    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipeEdit.jpg?raw=true",
+    image: "https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/RecipeEdit.jpg?raw=true",
   },
   {
     title: 'Make Meal',
@@ -106,8 +106,9 @@ const tiers = [
     buttonText: 'Create',
     buttonVariant: 'contained',
     link: '/WeekView',
-    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Chef2.jpeg?raw=true",
+    image: "https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/Chef2.jpeg?raw=true",
   },
+
 ];
 
 const footers = [
@@ -131,13 +132,8 @@ export default function Pricing() {
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+          
           </Typography>
-          <Link href="/SignUp" color="primary" variant="outlined" className={classes.link}>
-            <Button color="primary" variant="outlined">Sign Up</Button>
-          </Link>
-          <Link href="/SignIn" color="primary" variant="outlined" className={classes.link}>
-            <Button color="primary" variant="outlined">Sign In</Button>
-          </Link>
         </Toolbar>
       </AppBar>
       {/* Hero unit */}

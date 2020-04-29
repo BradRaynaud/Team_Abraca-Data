@@ -1,11 +1,6 @@
-# compose_flask/app.py
-from flask import Flask
-from flask import request
 import requests
 import json
 import random
-import sys
-
 
 
 def genPlan(target, Breakfast, Lunch, Dinner):
@@ -31,9 +26,8 @@ def genPlan(target, Breakfast, Lunch, Dinner):
                 #print(Calories,Fat,Cholesterol,Sodium,Carbohydrates,Protein)
                 
                 if score >= 95 and score <= 105:
-                    print(Calories,Fat,Cholesterol,Sodium,Carbohydrates,Protein, file=sys.stderr)
-                    print(score, file=sys.stderr)
-                    #print(temp, file=sys.stderr)
+                    print(Calories,Fat,Cholesterol,Sodium,Carbohydrates,Protein)
+                    print(score)
                     return temp
                 elif score > best and score < 110:
                     #print(score)
@@ -63,7 +57,7 @@ def heuristic(goal, Calories, Fat, Cholesterol, Sodium, Carbohydrates, Protein):
 
 def grabRecipe():
 
-    breakfast = requests.get("http://backend:8000/miningquery?tags=BK&calories=1000")
+    breakfast = requests.get("http://localhost/api/miningquery?tags=BK&calories=1000")
     breakfastData = breakfast.json()
 
     breakfast = []
@@ -78,7 +72,7 @@ def grabRecipe():
         nutrit5 = nutrit["5"]
         breakfast.append([id,nutrit0,nutrit1,nutrit2,nutrit3,nutrit4,nutrit5])
 
-    LD = requests.get("http://backend:8000/miningquery?tags=LD&calories=1000")
+    LD = requests.get("http://localhost/api/miningquery?tags=LD&calories=1000")
     LDData = LD.json()
 
     lunch = []
@@ -96,69 +90,15 @@ def grabRecipe():
     
 
     return breakfast, lunch, lunch
+
         
 
 
 
 
 
+target = [1700, 70, 300, 2400, 300, 50]
+Breakfast, Lunch, Dinner = grabRecipe()
+plan = genPlan(target,Breakfast,Lunch,Dinner)
 
-
-
-
-
-
-app = Flask(__name__)
-
-@app.route('/')
-
-# Route for preliminary testing of my algorithm
-# Will provide no input and recieve the test version of my answer
-@app.route('/HelloWorld',methods=['GET', 'POST'])
-def HelloWorld():
-    rawdata = request.json
-    print("Meal Plan Request",rawdata, file=sys.stderr)
-    # Calories Fat Cholesterol Sodium Carbohydrates Protein
-    #EX meal plan 2000, 70, 300, 2400, 300, 50
-    #target = [1700, 70, 300, 2400, 300, 50]
-    target = [float(rawdata["calories"]),
-                float(rawdata["fat"]),
-                float(rawdata["cholesterol"]),
-                float(rawdata["sodium"]),
-                float(rawdata["carbohydrates"]),
-                float(rawdata["protein"])]
-
-    Breakfast, Lunch, Dinner = grabRecipe()
-
-    mealstr = ""
-    for i in range(0,7):
-        print(i, file=sys.stderr)
-
-        plan = genPlan(target,Breakfast,Lunch,Dinner)
-
-        print(plan, file=sys.stderr)
-
-        for meal in plan:
-            mealstr= mealstr+str(meal)
-            mealstr=mealstr+","
-
-    # Mealplan
-    mealplan = mealstr[:-1]
-    # User
-    user = rawdata["id"]
-    user = user.lower()
-
-    # Output Mealplan and Username
-    print(mealplan, file=sys.stderr)
-    print(user, file=sys.stderr)
-
-    Query = "http://backend:8000/mealplanstore?user="+user+"&recipes="+mealplan
-    print(Query, file=sys.stderr)
-    requests.get(Query)
-
-
-    return str(plan)
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+print(plan)
