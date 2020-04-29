@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(6),
   },
   image: {
-    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/MealPrep1.jpg?raw=true)',
+    backgroundImage: 'url(https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/MealPrep1.jpg?raw=true)',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
     backgroundPosition: 'center',
@@ -94,7 +94,7 @@ const tiers = [
   ingredients: 'Waffles, Eggs',
   recipe: 'Cook waffles and scramble eggs',
   nutrition: 'Calories: 500, Fat: 12mg',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Monday Lunch',
@@ -103,7 +103,7 @@ const tiers = [
   ingredients: 'Chicken, bread',
   recipe: 'Put chicken in between bread slices',
   nutrition: 'Calories: Chicken, Fat: Chicken',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Monday Dinner',
@@ -112,7 +112,7 @@ const tiers = [
   ingredients: 'Cow',
   recipe: 'Cook cow',
   nutrition: 'Cow',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Tuesday Breakfast',
@@ -121,7 +121,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Tuesday Lunch',
@@ -133,7 +133,7 @@ const tiers = [
   'Step 3: boil noodles until soft ' +
   'Step 4: mix in cheese, milk, and butter until it all looks correct',
   nutrition: 'Calories: Who cares, it tastes good',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Tuesday Dinner',
@@ -142,7 +142,7 @@ const tiers = [
   ingredients: 'This section is just to check if a really long descriptor can be displayed on the window correctly. It should do so, but gotta be sure.',
   recipe: 'Fry everything',
   nutrition: 'Bad',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Wednesday Breakfast',
@@ -151,7 +151,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Wednesday Lunch',
@@ -160,7 +160,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Wednesday Dinner',
@@ -169,7 +169,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Thursday Breakfast',
@@ -178,7 +178,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Thursday Lunch',
@@ -187,7 +187,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Thursday Dinner',
@@ -196,7 +196,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Friday Breakfast',
@@ -205,7 +205,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Friday Lunch',
@@ -214,7 +214,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Friday Dinner',
@@ -223,7 +223,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Saturday Breakfast',
@@ -232,7 +232,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Saturday Lunch',
@@ -241,7 +241,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Saturday Dinner',
@@ -250,7 +250,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Sunday Breakfast',
@@ -259,7 +259,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Sunday Lunch',
@@ -268,7 +268,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 {
   title:'Sunday Dinner',
@@ -277,7 +277,7 @@ const tiers = [
   ingredients: 'Cucumbers',
   recipe: 'Cut cucumbers',
   nutrition: 'Calories: still cucumbers',
-  URL: '',
+  URL: 'Source: AllRecipes',
 },
 ];
 
@@ -290,7 +290,7 @@ function childWindUp(card) {
   document.getElementById("nutid").innerHTML="Nutrition: " + card.nutrition;
   document.getElementById("servid").innerHTML="Servings: " + card.servings;
   document.getElementById("recid").innerHTML="Recipe: " + card.recipe;
-  document.getElementById("urlid").innerHTML="URL: " + card.URL;
+  document.getElementById("urlid").innerHTML="Source: AllRecipes";
 }
 
 function childWindDown() {
@@ -321,9 +321,9 @@ function pageBegin(username) {
 
           tiers[0].food = myObj[0].Title;
           tiers[0].recipe = myObj[0].Instructions;
-          tiers[0].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[0].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[0].ingredients = myObj[0].Ingredients;
           tiers[0].servings = myObj[0].Yield;
           tiers[0].URL = myObj[0].URL;
@@ -341,9 +341,9 @@ function pageBegin(username) {
 
           tiers[1].food = myObj[0].Title;
           tiers[1].recipe = myObj[0].Instructions;
-          tiers[1].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[1].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[1].ingredients = myObj[0].Ingredients;
           tiers[1].servings = myObj[0].Yield;
           tiers[1].URL = myObj[0].URL;
@@ -361,9 +361,9 @@ function pageBegin(username) {
 
           tiers[2].food = myObj[0].Title;
           tiers[2].recipe = myObj[0].Instructions;
-          tiers[2].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[2].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[2].ingredients = myObj[0].Ingredients;
           tiers[2].servings = myObj[0].Yield;
           tiers[2].URL = myObj[0].URL;
@@ -381,9 +381,9 @@ function pageBegin(username) {
 
           tiers[3].food = myObj[0].Title;
           tiers[3].recipe = myObj[0].Instructions;
-          tiers[3].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[3].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[3].ingredients = myObj[0].Ingredients;
           tiers[3].servings = myObj[0].Yield;
           tiers[3].URL = myObj[0].URL;
@@ -401,9 +401,9 @@ function pageBegin(username) {
 
           tiers[4].food = myObj[0].Title;
           tiers[4].recipe = myObj[0].Instructions;
-          tiers[4].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[4].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[4].ingredients = myObj[0].Ingredients;
           tiers[4].servings = myObj[0].Yield;
           tiers[4].URL = myObj[0].URL;
@@ -421,9 +421,9 @@ function pageBegin(username) {
 
           tiers[5].food = myObj[0].Title;
           tiers[5].recipe = myObj[0].Instructions;
-          tiers[5].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[5].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[5].ingredients = myObj[0].Ingredients;
           tiers[5].servings = myObj[0].Yield;
           tiers[5].URL = myObj[0].URL;
@@ -441,9 +441,9 @@ function pageBegin(username) {
 
           tiers[6].food = myObj[0].Title;
           tiers[6].recipe = myObj[0].Instructions;
-          tiers[6].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[6].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[6].ingredients = myObj[0].Ingredients;
           tiers[6].servings = myObj[0].Yield;
           tiers[6].URL = myObj[0].URL;
@@ -461,9 +461,9 @@ function pageBegin(username) {
 
           tiers[7].food = myObj[0].Title;
           tiers[7].recipe = myObj[0].Instructions;
-          tiers[7].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[7].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[7].ingredients = myObj[0].Ingredients;
           tiers[7].servings = myObj[0].Yield;
           tiers[7].URL = myObj[0].URL;
@@ -481,9 +481,9 @@ function pageBegin(username) {
 
           tiers[8].food = myObj[0].Title;
           tiers[8].recipe = myObj[0].Instructions;
-          tiers[8].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[8].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[8].ingredients = myObj[0].Ingredients;
           tiers[8].servings = myObj[0].Yield;
           tiers[8].URL = myObj[0].URL;
@@ -501,9 +501,9 @@ function pageBegin(username) {
 
           tiers[9].food = myObj[0].Title;
           tiers[9].recipe = myObj[0].Instructions;
-          tiers[9].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[9].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[9].ingredients = myObj[0].Ingredients;
           tiers[9].servings = myObj[0].Yield;
           tiers[9].URL = myObj[0].URL;
@@ -521,9 +521,9 @@ function pageBegin(username) {
 
           tiers[10].food = myObj[0].Title;
           tiers[10].recipe = myObj[0].Instructions;
-          tiers[10].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[10].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[10].ingredients = myObj[0].Ingredients;
           tiers[10].servings = myObj[0].Yield;
           tiers[10].URL = myObj[0].URL;
@@ -541,9 +541,9 @@ function pageBegin(username) {
 
           tiers[11].food = myObj[0].Title;
           tiers[11].recipe = myObj[0].Instructions;
-          tiers[11].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[11].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[11].ingredients = myObj[0].Ingredients;
           tiers[11].servings = myObj[0].Yield;
           tiers[11].URL = myObj[0].URL;
@@ -561,9 +561,9 @@ function pageBegin(username) {
 
           tiers[12].food = myObj[0].Title;
           tiers[12].recipe = myObj[0].Instructions;
-          tiers[12].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[12].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[12].ingredients = myObj[0].Ingredients;
           tiers[12].servings = myObj[0].Yield;
           tiers[12].URL = myObj[0].URL;
@@ -581,9 +581,9 @@ function pageBegin(username) {
 
           tiers[13].food = myObj[0].Title;
           tiers[13].recipe = myObj[0].Instructions;
-          tiers[13].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[13].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[13].ingredients = myObj[0].Ingredients;
           tiers[13].servings = myObj[0].Yield;
           tiers[13].URL = myObj[0].URL;
@@ -601,9 +601,9 @@ function pageBegin(username) {
 
           tiers[14].food = myObj[0].Title;
           tiers[14].recipe = myObj[0].Instructions;
-          tiers[14].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[14].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[14].ingredients = myObj[0].Ingredients;
           tiers[14].servings = myObj[0].Yield;
           tiers[14].URL = myObj[0].URL;
@@ -621,9 +621,9 @@ function pageBegin(username) {
 
           tiers[15].food = myObj[0].Title;
           tiers[15].recipe = myObj[0].Instructions;
-          tiers[15].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[15].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[15].ingredients = myObj[0].Ingredients;
           tiers[15].servings = myObj[0].Yield;
           tiers[15].URL = myObj[0].URL;
@@ -641,9 +641,9 @@ function pageBegin(username) {
 
           tiers[16].food = myObj[0].Title;
           tiers[16].recipe = myObj[0].Instructions;
-          tiers[16].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[16].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[16].ingredients = myObj[0].Ingredients;
           tiers[16].servings = myObj[0].Yield;
           tiers[16].URL = myObj[0].URL;
@@ -661,9 +661,9 @@ function pageBegin(username) {
 
           tiers[17].food = myObj[0].Title;
           tiers[17].recipe = myObj[0].Instructions;
-          tiers[17].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[17].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[17].ingredients = myObj[0].Ingredients;
           tiers[17].servings = myObj[0].Yield;
           tiers[17].URL = myObj[0].URL;
@@ -681,9 +681,9 @@ function pageBegin(username) {
 
           tiers[18].food = myObj[0].Title;
           tiers[18].recipe = myObj[0].Instructions;
-          tiers[18].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[18].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[18].ingredients = myObj[0].Ingredients;
           tiers[18].servings = myObj[0].Yield;
           tiers[18].URL = myObj[0].URL;
@@ -701,9 +701,9 @@ function pageBegin(username) {
 
           tiers[19].food = myObj[0].Title;
           tiers[19].recipe = myObj[0].Instructions;
-          tiers[19].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[19].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[19].ingredients = myObj[0].Ingredients;
           tiers[19].servings = myObj[0].Yield;
           tiers[19].URL = myObj[0].URL;
@@ -721,12 +721,12 @@ function pageBegin(username) {
 
           tiers[20].food = myObj[0].Title;
           tiers[20].recipe = myObj[0].Instructions;
-          tiers[20].nutrition = "\n Calories: " + myObj[0].Nutrition[0] + "\n Fat: " + myObj[0].Nutrition[1] + "\n Cholesterol: " +
-            myObj[0].Nutrition[2] + "\n Protein: " + myObj[0].Nutrition[3] + "\n Sodium: " + myObj[0].Nutrition[4] +
-            "\n Carbohydrates: " + myObj[0].Nutrition[5];
+          tiers[20].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
           tiers[20].ingredients = myObj[0].Ingredients;
           tiers[20].servings = myObj[0].Yield;
-          tiers[20].URL = myObj[0].URL;
+          //tiers[20].URL = myObj[0].URL;
         }
       };
       
@@ -763,7 +763,7 @@ export default function Album() {
             <Typography  component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Week View
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+            <Typography variant="h5" align="center" color="textPrimary" paragraph>
               Welcome to the Week View! Now that we have your meals for the week created, 
               you can come here to look over them and click on them to edit or look at 
               their recipes!
@@ -794,23 +794,23 @@ export default function Album() {
             style={{wordWrap : "break-word"}} gutterBottom className={classes.childText}>
               Recipe Here!
             </Typography>
-            <Typography id="nutid" variant="h5" align="left" color="textSecondary" 
+            <Typography id="nutid" variant="h5" align="left" color="textPrimary" 
             style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Nutrition: Egg
             </Typography>
-            <Typography id="servid" variant="h5" align="left" color="textSecondary" 
+            <Typography id="servid" variant="h5" align="left" color="textPrimary" 
             style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Servings: 
             </Typography>
-            <Typography id="ingid" variant="h5" align="left" color="textSecondary" 
+            <Typography id="ingid" variant="h5" align="left" color="textPrimary" 
             style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Ingredients: Egg
             </Typography>
-            <Typography id="recid" variant="h5" align="left" color="textSecondary" 
+            <Typography id="recid" variant="h5" align="left" color="textPrimary" 
             style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               Recipe: Crack egg, consume egg
             </Typography>
-            <Typography id="urlid" variant="h5" align="left" color="textSecondary" 
+            <Typography id="urlid" variant="h5" align="left" color="textPrimary" 
             style={{wordWrap : "break-word"}} paragraph className={classes.childText}>
               URL:
             </Typography>

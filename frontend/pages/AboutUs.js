@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   
   image: {
-    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/web/images/MPLogo.jpg?raw=true)',
+    backgroundImage: 'url(https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/MPLogo.jpg?raw=true)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'dark' ? theme.palette.grey[900] : theme.palette.grey[50],

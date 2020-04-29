@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   image: {
-    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/TableAlt2.jpg?raw=true)',
+    backgroundImage: 'url(https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/TableAlt2.jpg?raw=true)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -98,7 +98,7 @@ const tiers = [
     buttonText: 'Edit',
     buttonVariant: 'outlined',
     link: '/EditReqs',
-    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/RecipeEdit.jpg?raw=true",
+    image: "https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/RecipeEdit.jpg?raw=true",
   },
   {
     title: 'Make Meal',
@@ -106,7 +106,7 @@ const tiers = [
     buttonText: 'Create',
     buttonVariant: 'contained',
     link: '/WeekView',
-    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Chef2.jpeg?raw=true",
+    image: "https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/Chef2.jpeg?raw=true",
   },
   {
     title: 'Saved Meals',
@@ -114,7 +114,7 @@ const tiers = [
     buttonText: 'Search',
     buttonVariant: 'outlined',
     link: '/ContactUs',
-    image: "https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/frontend/pages/images/Fridge1.jpg?raw=true)",
+    image: "https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/Fridge1.jpg?raw=true)",
   },
 ];
 
