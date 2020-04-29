@@ -267,7 +267,7 @@ app.get('/mealplanstore', function (req,res) {
             });
             res.status(200).json({"Message" : "Mealplan Replaced"})
         } else {
-            con.query(`INSERT INTO mealplans VALUES ${recipes}`, function(err, result, fields){
+            con.query(`INSERT INTO mealplans VALUES ('${user}',${recipes[0]},${recipes[1]},${recipes[2]},${recipes[3]},${recipes[4]},${recipes[5]},${recipes[6]},${recipes[7]},${recipes[8]},${recipes[9]},${recipes[10]},${recipes[11]},${recipes[12]},${recipes[13]},${recipes[14]},${recipes[15]},${recipes[16]},${recipes[17]},${recipes[18]},${recipes[19]},${recipes[20]})`, function(err, result, fields){
                 console.log(result)
                 if (err) throw err;
             });
