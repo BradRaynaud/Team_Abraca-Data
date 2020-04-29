@@ -299,7 +299,9 @@ function childWindDown() {
   document.getElementById("para").style.display="block";
 }
 
-function pageBegin() {
+function pageBegin(username) {
+  console.log(username)
+
   document.getElementById("userInput").style.display="none";
   document.getElementById("cardid").style.display="block"; 
   document.getElementById("para").style.display="block";
@@ -733,8 +735,8 @@ function pageBegin() {
       xmlhttp.send();
     }
   };
-  
-  xmlhttp.open("GET", "http://localhost/api/mealplantest", true); // true for asynchronous 
+  var Query = "http://localhost/api/mealplanget?user="+username
+  xmlhttp.open("GET", Query, true); // true for asynchronous 
   xmlhttp.send();
 
   
@@ -781,7 +783,7 @@ export default function Album() {
                 name="username">
               </TextField>
             </Grid>
-            <Button onClick={event => { pageBegin() }} variant="contained" color="primary" fullWidth>
+            <Button onClick={event => { pageBegin(username.value) }} variant="contained" color="primary" fullWidth>
               Submit
             </Button>
           </Grid>

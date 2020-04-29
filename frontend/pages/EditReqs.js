@@ -55,7 +55,7 @@ class EditReqs extends React.Component {
         carbohydrate: carbohydrate.value
       })
     };
-    fetch('/api/hello_world', requestOptions)
+    fetch('/api/datastuff', requestOptions)
   }
 
 

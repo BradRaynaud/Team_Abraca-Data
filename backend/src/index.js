@@ -82,80 +82,88 @@ app.get("/mongoinsert", function(req, res) {
 
 app.get("/idquery", function(req, res) {
     MongoClient.connect(url, function(err, client) {
-        console.log("Connected successfully to server");
+        //console.log("Connected successfully to server");
 
         const db = client.db(dbName);
         
         var params = {};
         params["ID"] = parseInt(req.query.id)
 
-        console.log(params);
+        //console.log(params);
 
-        console.log("DB found");        
+        //console.log("DB found");        
         
         db.collection("recipes").find(params).toArray(function(error, docs)
         {
             if (error) throw error;
-            console.log("Found the following records");
+            //console.log("Found the following records");
             
-            console.log(docs.name);
+            //console.log(docs.name);
             res.status(200).send(docs);
         });
         
         client.close();
-        console.log("Connection closed");
+        //console.log("Connection closed");
     });
 })
 
 app.get("/miningquery", function(req, res) {
     MongoClient.connect(url, function(err, client) {
-        console.log("Connected successfully to server");
+        //console.log("Connected successfully to server");
         //console.log(req.query.tags);
         const db = client.db(dbName);
         var params = {};
         var calories = req.query.calories;
         params["Tags"] = req.query.tags.split(",");
-        console.log(calories);
+        //console.log(calories);
         if (calories != null){
             //params["Nutrition"] = {0:{$lte: parseInt(calories)}}
             db.collection("recipes").find({"Tags":req.query.tags.split(","),"Nutrition.0":{$lte: parseFloat(calories)}},{projection:{_id:0,ID:1, Nutrition:1}}).toArray(function(error, docs)
             {
-                console.log("Made it into the if statement")
+                //console.log("Made it into the if statement")
                 if (error) throw error;
-                console.log("Found the following records");
-                console.log(docs.name);
+                //console.log("Found the following records");
+                //console.log(docs.name);
                 res.status(200).send(docs);
             });
         } else {
             db.collection("recipes").find(params, {projection:{_id:0,ID:1, Nutrition:1}}).toArray(function(error, docs)
             {
                 if (error) throw error;
-                console.log("Found the following records");
-                console.log(docs.name);
+                //console.log("Found the following records");
+                //console.log(docs.name);
                 res.status(200).send(docs);
             });
         }
         
         
 
-        console.log(params);
+        //console.log(params);
 
-        console.log("DB found");        
+        //console.log("DB found");        
         //res.status(200).send(params)
         
         
         client.close();
-        console.log("Connection closed");
+        //console.log("Connection closed");
     });
 })
 
-app.get('/datastuff', function (req, res) {
-    console.log("Call recived")
+app.post('/datastuff', function (req, res) {
+    console.log(req.body)
     unirest
     .post('http://datamining:5000/HelloWorld')
     .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
-    .send({ "parameter": 23, "foo": "bar" })
+    .send({"id":req.body.ID, 
+        "calories": req.body.calories, 
+        "fat": req.body.fat, 
+        "cholesterol":req.body.cholesterol, 
+        "protein":req.body.protein,
+        "sodium":req.body.sodium,
+        "carbohydrates":req.body.carbohydrate
+})
     .then((response) => {
+        console.log("I get here")
         console.log(response.body)
         res.status(200).json({"message": response.body});
   })
@@ -267,7 +275,7 @@ app.get('/mealplanstore', function (req,res) {
             });
             res.status(200).json({"Message" : "Mealplan Replaced"})
         } else {
-            con.query(`INSERT INTO mealplans VALUES ${recipes}`, function(err, result, fields){
+            con.query(`INSERT INTO mealplans VALUES ('${user}',${recipes[0]},${recipes[1]},${recipes[2]},${recipes[3]},${recipes[4]},${recipes[5]},${recipes[6]},${recipes[7]},${recipes[8]},${recipes[9]},${recipes[10]},${recipes[11]},${recipes[12]},${recipes[13]},${recipes[14]},${recipes[15]},${recipes[16]},${recipes[17]},${recipes[18]},${recipes[19]},${recipes[20]})`, function(err, result, fields){
                 console.log(result)
                 if (err) throw err;
             });
