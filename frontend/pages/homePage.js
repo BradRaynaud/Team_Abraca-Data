@@ -139,13 +139,8 @@ export default function Pricing() {
       <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+          
           </Typography>
-          <Link href="/SignUp" className={classes.link}>
-            <Button color="primary" variant="contained">Sign Up</Button>
-          </Link>
-          <Link href="/SignIn" className={classes.link}>
-            <Button color="primary" variant="contained">Sign In</Button>
-          </Link>
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
