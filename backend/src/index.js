@@ -217,6 +217,65 @@ app.get('/login', function (req,res) {
     });
 })
 
+app.get('/mealplanget', function (req,res) {
+    var user = req.query.user;
+    user = user.toLowerCase();
+    var con = mysql.createConnection({
+        host:"mysql",
+        user: "root",
+        password: "example",
+        database: "mealplans"
+    });
+    
+    con.connect();
+
+    console.log("Connected");
+    con.query(`SELECT meal1,meal2,meal3,meal4,meal5,meal6,meal7,meal8,meal9,meal10,meal11,meal12,meal13,meal14,meal15,meal16,meal17,meal18,meal19,meal20,meal21 FROM mealplans WHERE username = '${user}'`, function(err, result, fields){
+        if (err) throw err;
+        console.log(result)
+        if (result.length == 0) {
+            res.status(200).json({"Message" : "This account does not exist"})
+        } else {
+            var mealplan = [result[0].meal1,result[0].meal2,result[0].meal3,result[0].meal4,result[0].meal5,result[0].meal6,result[0].meal7,result[0].meal8,result[0].meal9,result[0].meal10,result[0].meal11,result[0].meal12,result[0].meal13,result[0].meal14,result[0].meal15,result[0].meal16,result[0].meal17,result[0].meal18,result[0].meal19,result[0].meal20,result[0].meal21];
+            res.status(200).json({mealplan})            
+        }   
+    });
+})
+
+app.get('/mealplanstore', function (req,res) {
+    var user = req.query.user;
+    user = user.toLowerCase();
+    var recipes = req.query.recipes.split(",");
+    //recipes.unshift(user);
+    var con = mysql.createConnection({
+        host:"mysql",
+        user: "root",
+        password: "example",
+        database: "mealplans"
+    });
+    
+    con.connect();
+    console.log("Connected");
+
+    con.query(`SELECT * FROM mealplans WHERE username = '${user}'`, function(err, result, fields){
+        if (err) throw err;
+        console.log(result)
+        if (result.length != 0) {
+            con.query(`REPLACE INTO mealplans VALUES ('${user}',${recipes[0]},${recipes[1]},${recipes[2]},${recipes[3]},${recipes[4]},${recipes[5]},${recipes[6]},${recipes[7]},${recipes[8]},${recipes[9]},${recipes[10]},${recipes[11]},${recipes[12]},${recipes[13]},${recipes[14]},${recipes[15]},${recipes[16]},${recipes[17]},${recipes[18]},${recipes[19]},${recipes[20]})`, function(err, result, fields){
+                console.log(result)
+                if (err) throw err;
+            });
+            res.status(200).json({"Message" : "Mealplan Replaced"})
+        } else {
+            con.query(`INSERT INTO mealplans VALUES ${recipes}`, function(err, result, fields){
+                console.log(result)
+                if (err) throw err;
+            });
+            res.status(200).json({"Message" : "Mealplan Inserted"})            
+        }   
+    });
+})
+
 app.listen(8000, "0.0.0.0");
 
 
