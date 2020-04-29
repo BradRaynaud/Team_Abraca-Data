@@ -300,448 +300,452 @@ function childWindDown() {
 }
 
 function pageBegin(username) {
-  console.log(username)
-
-  document.getElementById("userInput").style.display="none";
-  document.getElementById("cardid").style.display="block"; 
-  document.getElementById("para").style.display="block";
-
-
-  var call = "";
-
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var numArray = JSON.parse(this.responseText);
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[0].food = myObj[0].Title;
-          tiers[0].recipe = myObj[0].Instructions;
-          tiers[0].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[0].ingredients = myObj[0].Ingredients;
-          tiers[0].servings = myObj[0].Yield;
-          tiers[0].URL = myObj[0].URL;
-        }
-      };
+  var numbers = /^[a-zA-Z]+$/;
   
-      call = "/api/idquery?id=" + numArray.mealplan[0].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[1].food = myObj[0].Title;
-          tiers[1].recipe = myObj[0].Instructions;
-          tiers[1].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[1].ingredients = myObj[0].Ingredients;
-          tiers[1].servings = myObj[0].Yield;
-          tiers[1].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[1].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[2].food = myObj[0].Title;
-          tiers[2].recipe = myObj[0].Instructions;
-          tiers[2].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[2].ingredients = myObj[0].Ingredients;
-          tiers[2].servings = myObj[0].Yield;
-          tiers[2].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[2].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[3].food = myObj[0].Title;
-          tiers[3].recipe = myObj[0].Instructions;
-          tiers[3].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[3].ingredients = myObj[0].Ingredients;
-          tiers[3].servings = myObj[0].Yield;
-          tiers[3].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[3].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[4].food = myObj[0].Title;
-          tiers[4].recipe = myObj[0].Instructions;
-          tiers[4].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[4].ingredients = myObj[0].Ingredients;
-          tiers[4].servings = myObj[0].Yield;
-          tiers[4].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[4].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[5].food = myObj[0].Title;
-          tiers[5].recipe = myObj[0].Instructions;
-          tiers[5].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[5].ingredients = myObj[0].Ingredients;
-          tiers[5].servings = myObj[0].Yield;
-          tiers[5].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[5].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[6].food = myObj[0].Title;
-          tiers[6].recipe = myObj[0].Instructions;
-          tiers[6].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[6].ingredients = myObj[0].Ingredients;
-          tiers[6].servings = myObj[0].Yield;
-          tiers[6].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[6].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[7].food = myObj[0].Title;
-          tiers[7].recipe = myObj[0].Instructions;
-          tiers[7].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[7].ingredients = myObj[0].Ingredients;
-          tiers[7].servings = myObj[0].Yield;
-          tiers[7].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[7].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[8].food = myObj[0].Title;
-          tiers[8].recipe = myObj[0].Instructions;
-          tiers[8].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[8].ingredients = myObj[0].Ingredients;
-          tiers[8].servings = myObj[0].Yield;
-          tiers[8].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[8].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[9].food = myObj[0].Title;
-          tiers[9].recipe = myObj[0].Instructions;
-          tiers[9].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[9].ingredients = myObj[0].Ingredients;
-          tiers[9].servings = myObj[0].Yield;
-          tiers[9].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[9].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[10].food = myObj[0].Title;
-          tiers[10].recipe = myObj[0].Instructions;
-          tiers[10].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[10].ingredients = myObj[0].Ingredients;
-          tiers[10].servings = myObj[0].Yield;
-          tiers[10].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[10].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[11].food = myObj[0].Title;
-          tiers[11].recipe = myObj[0].Instructions;
-          tiers[11].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[11].ingredients = myObj[0].Ingredients;
-          tiers[11].servings = myObj[0].Yield;
-          tiers[11].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[11].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[12].food = myObj[0].Title;
-          tiers[12].recipe = myObj[0].Instructions;
-          tiers[12].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[12].ingredients = myObj[0].Ingredients;
-          tiers[12].servings = myObj[0].Yield;
-          tiers[12].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[12].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[13].food = myObj[0].Title;
-          tiers[13].recipe = myObj[0].Instructions;
-          tiers[13].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[13].ingredients = myObj[0].Ingredients;
-          tiers[13].servings = myObj[0].Yield;
-          tiers[13].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[13].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[14].food = myObj[0].Title;
-          tiers[14].recipe = myObj[0].Instructions;
-          tiers[14].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[14].ingredients = myObj[0].Ingredients;
-          tiers[14].servings = myObj[0].Yield;
-          tiers[14].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[14].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[15].food = myObj[0].Title;
-          tiers[15].recipe = myObj[0].Instructions;
-          tiers[15].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[15].ingredients = myObj[0].Ingredients;
-          tiers[15].servings = myObj[0].Yield;
-          tiers[15].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[15].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[16].food = myObj[0].Title;
-          tiers[16].recipe = myObj[0].Instructions;
-          tiers[16].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[16].ingredients = myObj[0].Ingredients;
-          tiers[16].servings = myObj[0].Yield;
-          tiers[16].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[16].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[17].food = myObj[0].Title;
-          tiers[17].recipe = myObj[0].Instructions;
-          tiers[17].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[17].ingredients = myObj[0].Ingredients;
-          tiers[17].servings = myObj[0].Yield;
-          tiers[17].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[17].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[18].food = myObj[0].Title;
-          tiers[18].recipe = myObj[0].Instructions;
-          tiers[18].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[18].ingredients = myObj[0].Ingredients;
-          tiers[18].servings = myObj[0].Yield;
-          tiers[18].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[18].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[19].food = myObj[0].Title;
-          tiers[19].recipe = myObj[0].Instructions;
-          tiers[19].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[19].ingredients = myObj[0].Ingredients;
-          tiers[19].servings = myObj[0].Yield;
-          tiers[19].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[19].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myObj = JSON.parse(this.responseText);
-
-          tiers[20].food = myObj[0].Title;
-          tiers[20].recipe = myObj[0].Instructions;
-          tiers[20].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
-            myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
-            "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
-          tiers[20].ingredients = myObj[0].Ingredients;
-          tiers[20].servings = myObj[0].Yield;
-          //tiers[20].URL = myObj[0].URL;
-        }
-      };
-      
-      call = "/api/idquery?id=" + numArray.mealplan[20].toString();
-      xmlhttp.open("GET", call, true); // true for asynchronous 
-      xmlhttp.send();
-    }
-  };
-  var Query = "/api/mealplanget?user="+username
-  xmlhttp.open("GET", Query, true); // true for asynchronous 
-  xmlhttp.send();
-
+  if (username.match(numbers))
+  {
   
+    document.getElementById("userInput").style.display="none";
+    document.getElementById("cardid").style.display="block"; 
+    document.getElementById("para").style.display="block";
 
-  //document.getElementById("cafoid").innerHTML={tier.food};
+
+    var call = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var numArray = JSON.parse(this.responseText);
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[0].food = myObj[0].Title;
+            tiers[0].recipe = myObj[0].Instructions;
+            tiers[0].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[0].ingredients = myObj[0].Ingredients;
+            tiers[0].servings = myObj[0].Yield;
+            tiers[0].URL = myObj[0].URL;
+          }
+        };
+    
+        call = "/api/idquery?id=" + numArray.mealplan[0].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[1].food = myObj[0].Title;
+            tiers[1].recipe = myObj[0].Instructions;
+            tiers[1].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[1].ingredients = myObj[0].Ingredients;
+            tiers[1].servings = myObj[0].Yield;
+            tiers[1].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[1].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[2].food = myObj[0].Title;
+            tiers[2].recipe = myObj[0].Instructions;
+            tiers[2].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[2].ingredients = myObj[0].Ingredients;
+            tiers[2].servings = myObj[0].Yield;
+            tiers[2].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[2].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[3].food = myObj[0].Title;
+            tiers[3].recipe = myObj[0].Instructions;
+            tiers[3].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[3].ingredients = myObj[0].Ingredients;
+            tiers[3].servings = myObj[0].Yield;
+            tiers[3].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[3].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[4].food = myObj[0].Title;
+            tiers[4].recipe = myObj[0].Instructions;
+            tiers[4].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[4].ingredients = myObj[0].Ingredients;
+            tiers[4].servings = myObj[0].Yield;
+            tiers[4].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[4].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[5].food = myObj[0].Title;
+            tiers[5].recipe = myObj[0].Instructions;
+            tiers[5].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[5].ingredients = myObj[0].Ingredients;
+            tiers[5].servings = myObj[0].Yield;
+            tiers[5].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[5].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[6].food = myObj[0].Title;
+            tiers[6].recipe = myObj[0].Instructions;
+            tiers[6].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[6].ingredients = myObj[0].Ingredients;
+            tiers[6].servings = myObj[0].Yield;
+            tiers[6].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[6].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[7].food = myObj[0].Title;
+            tiers[7].recipe = myObj[0].Instructions;
+            tiers[7].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[7].ingredients = myObj[0].Ingredients;
+            tiers[7].servings = myObj[0].Yield;
+            tiers[7].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[7].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[8].food = myObj[0].Title;
+            tiers[8].recipe = myObj[0].Instructions;
+            tiers[8].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[8].ingredients = myObj[0].Ingredients;
+            tiers[8].servings = myObj[0].Yield;
+            tiers[8].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[8].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[9].food = myObj[0].Title;
+            tiers[9].recipe = myObj[0].Instructions;
+            tiers[9].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[9].ingredients = myObj[0].Ingredients;
+            tiers[9].servings = myObj[0].Yield;
+            tiers[9].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[9].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[10].food = myObj[0].Title;
+            tiers[10].recipe = myObj[0].Instructions;
+            tiers[10].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[10].ingredients = myObj[0].Ingredients;
+            tiers[10].servings = myObj[0].Yield;
+            tiers[10].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[10].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[11].food = myObj[0].Title;
+            tiers[11].recipe = myObj[0].Instructions;
+            tiers[11].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[11].ingredients = myObj[0].Ingredients;
+            tiers[11].servings = myObj[0].Yield;
+            tiers[11].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[11].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[12].food = myObj[0].Title;
+            tiers[12].recipe = myObj[0].Instructions;
+            tiers[12].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[12].ingredients = myObj[0].Ingredients;
+            tiers[12].servings = myObj[0].Yield;
+            tiers[12].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[12].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[13].food = myObj[0].Title;
+            tiers[13].recipe = myObj[0].Instructions;
+            tiers[13].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[13].ingredients = myObj[0].Ingredients;
+            tiers[13].servings = myObj[0].Yield;
+            tiers[13].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[13].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[14].food = myObj[0].Title;
+            tiers[14].recipe = myObj[0].Instructions;
+            tiers[14].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[14].ingredients = myObj[0].Ingredients;
+            tiers[14].servings = myObj[0].Yield;
+            tiers[14].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[14].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[15].food = myObj[0].Title;
+            tiers[15].recipe = myObj[0].Instructions;
+            tiers[15].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[15].ingredients = myObj[0].Ingredients;
+            tiers[15].servings = myObj[0].Yield;
+            tiers[15].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[15].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[16].food = myObj[0].Title;
+            tiers[16].recipe = myObj[0].Instructions;
+            tiers[16].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[16].ingredients = myObj[0].Ingredients;
+            tiers[16].servings = myObj[0].Yield;
+            tiers[16].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[16].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[17].food = myObj[0].Title;
+            tiers[17].recipe = myObj[0].Instructions;
+            tiers[17].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[17].ingredients = myObj[0].Ingredients;
+            tiers[17].servings = myObj[0].Yield;
+            tiers[17].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[17].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[18].food = myObj[0].Title;
+            tiers[18].recipe = myObj[0].Instructions;
+            tiers[18].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[18].ingredients = myObj[0].Ingredients;
+            tiers[18].servings = myObj[0].Yield;
+            tiers[18].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[18].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[19].food = myObj[0].Title;
+            tiers[19].recipe = myObj[0].Instructions;
+            tiers[19].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[19].ingredients = myObj[0].Ingredients;
+            tiers[19].servings = myObj[0].Yield;
+            tiers[19].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[19].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+
+            tiers[20].food = myObj[0].Title;
+            tiers[20].recipe = myObj[0].Instructions;
+            tiers[20].nutrition = " Calories: " + myObj[0].Nutrition[0] + " Fat: " + myObj[0].Nutrition[1] + "g Cholesterol: " +
+              myObj[0].Nutrition[2] + "mg Protein: " + myObj[0].Nutrition[3] + "g Sodium: " + myObj[0].Nutrition[4] +
+              "mg Carbohydrates: " + myObj[0].Nutrition[5] + "g";
+            tiers[20].ingredients = myObj[0].Ingredients;
+            tiers[20].servings = myObj[0].Yield;
+            //tiers[20].URL = myObj[0].URL;
+          }
+        };
+        
+        call = "/api/idquery?id=" + numArray.mealplan[20].toString();
+        xmlhttp.open("GET", call, true); // true for asynchronous 
+        xmlhttp.send();
+      }
+    };
+    var Query = "/api/mealplanget?user="+username
+    xmlhttp.open("GET", Query, true); // true for asynchronous 
+    xmlhttp.send();
+
+    
+
+    //document.getElementById("cafoid").innerHTML={tier.food};
+  }
 }
 
 export default function Album() {
@@ -772,7 +776,7 @@ export default function Album() {
         <Container id="userInput" maxWidth="xs" className={classes.extraContent}>
           <Grid container spacing={2}>
             <Typography variant="h5" color="textPrimary">
-              Please enter your username:
+              Please enter your User ID:
             </Typography>
             <Grid item xs={12}>
               <TextField
