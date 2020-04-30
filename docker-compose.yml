@@ -46,6 +46,7 @@ services:
     build: ./datamining
     ports:
       - 5000:5000
+    restart: always
     volumes:
       - ./datamining/src:/datamining/code
   backendtest:

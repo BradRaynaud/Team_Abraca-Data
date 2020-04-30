@@ -17,10 +17,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary">
-      {'Copyright © '}
-      <Link color="inherit" href="/SignIn">
-        Project Meal Planner
-      </Link>{' '}
+      {'Copyright © Project Meal Planner '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -33,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
   
   image: {
-    backgroundImage: 'url(https://github.com/BradRaynaud/Team_Abraca-Data/blob/master/web/images/MPLogo.jpg?raw=true)',
+    backgroundImage: 'url(https://github.com/BradRaynaud/CapstoneAssets/blob/master/images/MPLogo.jpg?raw=true)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'dark' ? theme.palette.grey[900] : theme.palette.grey[50],

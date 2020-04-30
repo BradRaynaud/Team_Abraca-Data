@@ -6,6 +6,7 @@ dinner = [100., 5., 5., 5., 5., 5.]
 
 goal = [3000, 15, 15, 15, 15, 15]
 
+#EX meal plan 2000, 70, 300, 2400, 300, 50
 
 def heuristic():
     Calories = breakfast[0] + lunch[0] + dinner[0]
