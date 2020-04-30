@@ -44,12 +44,12 @@ def genPlan(target, Breakfast, Lunch, Dinner):
 
 
 def heuristic(goal, Calories, Fat, Cholesterol, Sodium, Carbohydrates, Protein):
-    CalorieScore = (Calories/goal[0]) * 100
-    FatScore = (Fat/goal[1]) * 100
-    CholesterolScore = (Cholesterol/goal[2]) * 100
-    SodiumScore = (Sodium/goal[3]) * 100
-    CarbohydratesScore = (Carbohydrates/goal[4]) * 100
-    ProteinScore = Protein/goal[5] * 100
+    CalorieScore = (Calories/(goal[0]+1)) * 100
+    FatScore = (Fat/(goal[1]+1)) * 100
+    CholesterolScore = (Cholesterol/(goal[2]+1)) * 100
+    SodiumScore = (Sodium/(goal[3]+1)) * 100
+    CarbohydratesScore = (Carbohydrates/(goal[4]+1)) * 100
+    ProteinScore = (Protein/(goal[5]+1))* 100
 
     if CalorieScore < 75 or FatScore < 50 or CholesterolScore < 50 or SodiumScore < 50 or CarbohydratesScore < 50 or ProteinScore < 50:
         return 0

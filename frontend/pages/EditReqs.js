@@ -62,7 +62,8 @@ class EditReqs extends React.Component {
       })
     };
     var numbers = /^[0-9]+$/;
-    if(calorie.value.match(numbers) && fat.value.match(numbers) && cholesterol.value.match(numbers) && protein.value.match(numbers) && sodium.value.match(numbers) && carbohydrate.value.match(numbers)){
+    var letters = /^[a-z]+$/;
+    if(calorie.value.match(numbers) && fat.value.match(numbers) && cholesterol.value.match(numbers) && protein.value.match(numbers) && sodium.value.match(numbers) && carbohydrate.value.match(numbers) && ID.value.match(letters)){
       console.log("Valid Entry");
       
       fetch('/api/datastuff', requestOptions);

@@ -297,7 +297,7 @@ function childWindDown() {
 }
 
 function pageBegin(username) {
-  var numbers = /^[a-zA-Z]+$/;
+  var numbers = /^[a-z]+$/;
   
   if (username.match(numbers))
   {
